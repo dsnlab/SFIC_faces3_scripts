@@ -18,17 +18,17 @@
 
 # paths
 #This is where all subject-numbered directories are:
-subjectDir = "/projects/dsnlab/tds/fMRI/subjects_tds2/"
+subjectDir = "/projects/dsnlab/SFIC_Faces3/fMRI/subjects/"
 #If you want nii files in just a particular subject subdirectory, specifiy that here:
 functionalDir = ""
 #This is where you want the resulting csv file to be saved:
-outputDir = "/projects/dsnlab/tds/fMRI/analysis/fx/motion/auto-motion-output/" 
+outputDir = "/projects/dsnlab/SFIC_Faces3/fMRI/analysis/fx/motion/auto-motion-output/" 
 
 # variables
-study = "tds"
-subPattern = "^[0-9]{3}"
-prefix = "ru" #would usually be "o", or "ru" 
-runPattern = "(cyb|stop|vid)[1-8]" 
+study = "SFIC_Faces3"
+subPattern = "^sub-L[0-9]{3}"
+prefix = "s6wob" #would usually be "o", or "ru" 
+runPattern = "ses-wave[1-3]"
 threshold = 5000
 final_output_csv = file.path(outputDir,paste0(study,'_globalIntensities.csv'))
 parallelize = TRUE
