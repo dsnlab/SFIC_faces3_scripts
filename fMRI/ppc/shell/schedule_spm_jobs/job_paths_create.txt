@@ -1,0 +1,1 @@
+find /projects/dsnlab/SFIC_Self3/code/spm/ppc/ppc_jobs > job_paths.tsv

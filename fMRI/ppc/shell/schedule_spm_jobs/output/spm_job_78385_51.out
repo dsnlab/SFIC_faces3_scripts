@@ -1,0 +1,68 @@
+51
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2016 The MathWorks, Inc.
+                   R2016b (9.1.0.441655) 64-bit (glnxa64)
+                             September 7, 2016
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+JOB ID: /projects/dsnlab/SFIC_Faces3/scripts/fMRI/ppc/spm/ppc_jobs/sub-L030_t3_ppc_job.mat
+
+
+------------------------------------------------------------------------
+Running job #1
+------------------------------------------------------------------------
+Running 'File Selector (Batch Mode)'
+Done    'File Selector (Batch Mode)'
+Running 'Realign: Estimate & Reslice'
+
+SPM12: spm_realign (v6070)                         10:38:50 - 10/08/2017
+========================================================================
+Completed                               :          10:39:18 - 10/08/2017
+
+SPM12: spm_reslice (v5929)                         10:39:18 - 10/08/2017
+========================================================================
+Completed                               :          10:39:25 - 10/08/2017
+Done    'Realign: Estimate & Reslice'
+Running 'Coregister: Estimate'
+
+SPM12: spm_coreg (v6435)                           10:39:26 - 10/08/2017
+========================================================================
+Completed                               :          10:39:35 - 10/08/2017
+Done    'Coregister: Estimate'
+Running 'Reorient Images'
+Failed  'Reorient Images'
+Error using svd
+Input to SVD must not contain NaN or Inf.
+In file "/projects/dsnlab/SPM12/@nifti/private/encode_qform0.m" (v1143), function "encode_qform0" at line 25.
+In file "/projects/dsnlab/SPM12/@nifti/subsasgn.m" (v5985), function "fun" at line 109.
+In file "/projects/dsnlab/SPM12/@nifti/subsasgn.m" (v5985), function "subsasgn" at line 20.
+In file "/projects/dsnlab/SPM12/spm_create_vol.m" (v6157), function "create_vol" at line 81.
+In file "/projects/dsnlab/SPM12/spm_create_vol.m" (v6157), function "spm_create_vol" at line 13.
+In file "/projects/dsnlab/SPM12/spm_write_vol.m" (v5731), function "spm_write_vol" at line 83.
+In file "/gpfs/projects/dsnlab/SPM12/config/spm_run_reorient.m" (v6078), function "spm_run_reorient" at line 46.
+
+Running 'Reorient Images'
+Failed  'Reorient Images'
+Error using svd
+Input to SVD must not contain NaN or Inf.
+In file "/projects/dsnlab/SPM12/@nifti/private/encode_qform0.m" (v1143), function "encode_qform0" at line 25.
+In file "/projects/dsnlab/SPM12/@nifti/subsasgn.m" (v5985), function "fun" at line 109.
+In file "/projects/dsnlab/SPM12/@nifti/subsasgn.m" (v5985), function "subsasgn" at line 20.
+In file "/projects/dsnlab/SPM12/spm_create_vol.m" (v6157), function "create_vol" at line 81.
+In file "/projects/dsnlab/SPM12/spm_create_vol.m" (v6157), function "spm_create_vol" at line 13.
+In file "/projects/dsnlab/SPM12/spm_write_vol.m" (v5731), function "spm_write_vol" at line 83.
+In file "/gpfs/projects/dsnlab/SPM12/config/spm_run_reorient.m" (v6078), function "spm_run_reorient" at line 46.
+
+No executable modules, but still unresolved dependencies or incomplete module inputs.
+The following modules did not run:
+Failed: Reorient Images
+Failed: Reorient Images
+Skipped: Old Normalise: Estimate & Write
+Skipped: Old Normalise: Estimate & Write
+Skipped: Smooth
+
+>> 

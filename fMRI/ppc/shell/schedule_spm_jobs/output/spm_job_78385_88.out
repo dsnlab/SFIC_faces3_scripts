@@ -1,0 +1,98 @@
+88
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2016 The MathWorks, Inc.
+                   R2016b (9.1.0.441655) 64-bit (glnxa64)
+                             September 7, 2016
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+JOB ID: /projects/dsnlab/SFIC_Faces3/scripts/fMRI/ppc/spm/ppc_jobs/sub-L051_t1_ppc_job.mat
+
+
+------------------------------------------------------------------------
+Running job #1
+------------------------------------------------------------------------
+Running 'File Selector (Batch Mode)'
+Done    'File Selector (Batch Mode)'
+Running 'Realign: Estimate & Reslice'
+
+SPM12: spm_realign (v6070)                         10:38:47 - 10/08/2017
+========================================================================
+Completed                               :          10:39:11 - 10/08/2017
+
+SPM12: spm_reslice (v5929)                         10:39:11 - 10/08/2017
+========================================================================
+Completed                               :          10:39:19 - 10/08/2017
+Done    'Realign: Estimate & Reslice'
+Running 'Coregister: Estimate'
+
+SPM12: spm_coreg (v6435)                           10:39:19 - 10/08/2017
+========================================================================
+Completed                               :          10:39:26 - 10/08/2017
+Done    'Coregister: Estimate'
+Running 'Reorient Images'
+Done    'Reorient Images'
+Item 'Source Image', field 'val': Number of matching files larger than max allowed, keeping 1/97 files.
+Running 'Reorient Images'
+Done    'Reorient Images'
+Running 'Old Normalise: Estimate & Write'
+Smoothing by 0 & 8mm..
+Coarse Affine Registration..
+Fine Affine Registration..
+3D CT Norm...
+ iteration  1:  FWHM =  7.267 Var = 0.725588
+ iteration  2:  FWHM =  4.753 Var = 0.46513
+ iteration  3:  FWHM =  4.638 Var = 0.453739
+ iteration  4:  FWHM =  4.636 Var = 0.451787
+ iteration  5:  FWHM =  4.629 Var = 0.451658
+ iteration  6:  FWHM =  4.631 Var = 0.451597
+ iteration  7:  FWHM =   4.63 Var = 0.45145
+ iteration  8:  FWHM =   4.63 Var = 0.45145
+ iteration  9:  FWHM =  4.629 Var = 0.45145
+ iteration 10:  FWHM =  4.629 Var = 0.45145
+ iteration 11:  FWHM =  4.629 Var = 0.45145
+ iteration 12:  FWHM =  4.629 Var = 0.451447
+ iteration 13:  FWHM =  4.629 Var = 0.451414
+ iteration 14:  FWHM =  4.629 Var = 0.451414
+ iteration 15:  FWHM =  4.629 Var = 0.451414
+ iteration 16:  FWHM =  4.629 Var = 0.451414
+Saving Parameters..
+
+SPM12: spm_write_sn (v4878)                        10:39:42 - 10/08/2017
+========================================================================
+Completed                               :          10:39:47 - 10/08/2017
+Done    'Old Normalise: Estimate & Write'
+Running 'Old Normalise: Estimate & Write'
+Smoothing by 0 & 8mm..
+Coarse Affine Registration..
+Fine Affine Registration..
+3D CT Norm...
+ iteration  1:  FWHM =  6.645 Var = 0.575507
+ iteration  2:  FWHM =   4.34 Var = 0.366094
+ iteration  3:  FWHM =  4.263 Var = 0.357061
+ iteration  4:  FWHM =  4.266 Var = 0.356821
+ iteration  5:  FWHM =  4.264 Var = 0.356229
+ iteration  6:  FWHM =  4.263 Var = 0.356229
+ iteration  7:  FWHM =  4.264 Var = 0.356229
+ iteration  8:  FWHM =  4.263 Var = 0.356229
+ iteration  9:  FWHM =  4.264 Var = 0.356229
+ iteration 10:  FWHM =  4.263 Var = 0.356229
+ iteration 11:  FWHM =  4.265 Var = 0.356229
+ iteration 12:  FWHM =  4.263 Var = 0.356229
+ iteration 13:  FWHM =  4.264 Var = 0.356229
+ iteration 14:  FWHM =  4.263 Var = 0.356229
+ iteration 15:  FWHM =  4.264 Var = 0.356229
+ iteration 16:  FWHM =  4.263 Var = 0.356229
+Saving Parameters..
+
+SPM12: spm_write_sn (v4878)                        10:39:58 - 10/08/2017
+========================================================================
+Completed                               :          10:39:58 - 10/08/2017
+Done    'Old Normalise: Estimate & Write'
+Running 'Smooth'
+Done    'Smooth'
+Done
+
