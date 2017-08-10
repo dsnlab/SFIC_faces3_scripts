@@ -9,7 +9,7 @@
 #set paths
 projectdir="/Volumes/psych-cog/dsnlab/SFIC"
 mridir="MRI_toBeSorted"
-bidsdir="mri"
+bidsdir="bids_data"
 
 #create log
 log="$projectdir"/"scripts/org/output_SFIC_convert.txt"
