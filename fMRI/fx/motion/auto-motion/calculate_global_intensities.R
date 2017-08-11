@@ -59,8 +59,11 @@ globint_for_sub <- function(sub, subjectDir, functionalDir, runPattern, prefix, 
   runs = list.files(paste0(subjectDir,sub,functionalDir), pattern=runPattern)
   
   for (run in runs){
+    #reset run variable	    
+    run = paste0(run,'/facesOB')
+
     # assign pattern based on prefix and run
-    filePattern = paste0('^',prefix,'.*',run,'_*([0-9]{4}).nii.*')
+    filePattern = paste0('^',prefix,'.*','_*([0-9]{4}).nii.*')
     
     # generate file path
     path = file.path(subjectDir,sub,'/',functionalDir,run)
