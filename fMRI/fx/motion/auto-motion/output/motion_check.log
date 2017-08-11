@@ -1,0 +1,45 @@
+
+Lmod is automatically replacing "intel/17" with "gcc/5.4"
+
+running
+  '/packages/R/3.4.1/lib64/R/bin/R --slave --no-restore --file=motion_check.r'
+
+Loading required package: knitr
+Loading required package: rmarkdown
+Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Warning message:
+Installed Rcpp (0.12.12) different from Rcpp used to build dplyr (0.12.11).
+Please reinstall dplyr to avoid random crashes or undefined behavior. 
+Loading required package: tidyr
+Loading required package: reshape2
+
+Attaching package: ‘reshape2’
+
+The following object is masked from ‘package:tidyr’:
+
+    smiths
+
+Loading required package: ggplot2
+Loading required package: pracma
+Loading required package: stringr
+
+
+Using this expression for trash regressor:
+(( deriv_trans < -1 ) ) | (( deriv_rot < -1 )) | (( deriv_trans > 1 ) ) | (( deriv_rot > 1 ))
+
+Adding missing grouping variables: `subject`, `run`
+There were 50 or more warnings (use warnings() to see the first 50)
+Error: pandoc version 1.12.3 or higher is required and was not found (see the help page ?rmarkdown::pandoc_available).
+Execution halted
+srun: error: n031: task 0: Exited with exit code 1

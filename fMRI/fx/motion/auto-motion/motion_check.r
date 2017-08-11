@@ -41,7 +41,7 @@ if(!require(ggplot2)){
 }
 library(ggplot2)
 if(!require(pracma)){
-	install.packages('pracma',repos=osuRepo)
+	install.packages('pracma')
 }
 library(pracma)
 if(!require(stringr)){
@@ -70,8 +70,8 @@ motion_rp_txt_dir<-'/projects/dsnlab/SFIC_Faces3/fMRI/analysis/fx/motion/auto-mo
 # "t165/ppc/functionals/vid2/rp_vid2_0001.txt" in its entirety, but the 
 # parentheses will allow us to pick out just the 't165'.
 #
-sid_regex<-'^sub_L([0-9]{3})/.*txt' #add regular expression for subject ID between the `()`
-rid_regex<-'^sub-L[0-9]{3}/(\\w+)/.*txt' #add regular expression for run ID between `()`
+sid_regex<-'^sub-L([0-9]{3})/.*txt' #add regular expression for subject ID between the `()`
+rid_regex<-'^sub-L[0-9]{3}/(ses-wave[1-3]{1})/.*txt' #add regular expression for run ID between `()`
 
 #
 # Document options
