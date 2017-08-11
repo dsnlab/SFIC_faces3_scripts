@@ -38,6 +38,7 @@ for wave in ses-*; do
 	#gunzip structurals
 	cd "$projectdir"/"$nonbidsdir"/${SUBID}/"${wave}"/structurals/
 	gunzip sub*
+	mv sub* hires.nii
 	cd "$projectdir"/"$bidsdir"/${SUBID}/
 done
 

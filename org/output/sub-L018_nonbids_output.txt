@@ -1,0 +1,8 @@
+sub-L018
+ses-*
+mkdir: created directory ‘/projects/dsnlab/SFIC_Faces3/fMRI/subjects’
+mkdir: created directory ‘/projects/dsnlab/SFIC_Faces3/fMRI/subjects/sub-L018’
+mkdir: created directory ‘/projects/dsnlab/SFIC_Faces3/fMRI/subjects/sub-L018/ses-*’
+mkdir: created directory ‘facesOB’
+mkdir: created directory ‘structurals’
+done

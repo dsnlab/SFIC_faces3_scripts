@@ -1,0 +1,7 @@
+sub-L047
+ses-wave1
+mkdir: created directory ‘/projects/dsnlab/SFIC_Faces3/fMRI/subjects/sub-L047’
+mkdir: created directory ‘/projects/dsnlab/SFIC_Faces3/fMRI/subjects/sub-L047/ses-wave1’
+mkdir: created directory ‘facesOB’
+mkdir: created directory ‘structurals’
+done
