@@ -27,9 +27,9 @@ outputDir = "/projects/dsnlab/SFIC_Faces3/fMRI/analysis/fx/motion/auto-motion-ou
 # variables
 study = "SFIC_Faces3"
 subPattern = "^sub-L[0-9]{3}"
-prefix = "o" #would usually be "o", or "ru" 
+prefix = "ob" #would usually be "o", or "ru" 
 runPattern = "ses-wave[1-3]"
-threshold = 5000
+threshold = 500
 final_output_csv = file.path(outputDir,paste0(study,'_globalIntensities.csv'))
 parallelize = TRUE
 leave_n_free_cores = 0
