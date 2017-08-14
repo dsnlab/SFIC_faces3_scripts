@@ -3,16 +3,16 @@
 
 % define paths
 projectDir = '/projects/dsnlab/SFIC_Faces3/fMRI';
-jobDir = '/Volumes/psych-cog/dsnlab/SFIC/scripts/fMRI/ppc/spm/ppc_jobs/';
+jobDir = '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/ppc/spm/ppc_jobs/';
 
 % define variables (skull-stripped symmetrical T2 MNI template)
 template = '/projects/dsnlab/SPM12/canonical/mni_icbm152_nlin_sym_09a/b_mni_icbm152_t2_tal_nlin_sym_09a.nii';
 
 % load reo params
-load /Volumes/psych-cog/dsnlab/SFIC/scripts/fMRI/ppc/spm/reoCell.mat
+load /Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/ppc/spm/reoCell.mat
 
 % loop through subjects and replace subject ID, wave, reo parameters
-for subCount = 1:96;
+for subCount = 1:97;
 	if subCount < 10
 		subID = ['sub-L00',num2str(subCount)];
 	else
