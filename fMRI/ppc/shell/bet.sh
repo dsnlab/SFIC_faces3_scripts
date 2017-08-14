@@ -24,7 +24,7 @@ for sub in sub-*; do
 		cd structurals
 		echo "structurals"
 		fn=*hires*
-		mv sub* hires.nii
+	#	mv sub* hires.nii
 		bet ${fn} b_hires -R
 		gunzip b_hires.nii.gz            
 		cd ../
@@ -35,8 +35,8 @@ for sub in sub-*; do
 
 		for image in $(ls *.nii); do
 			volnum="$(echo "${image}" | sed 's/[^0-9]//g')"
-			mv ${image} facesOB_"$volnum".nii
-			bet facesOB_"$volnum".nii b_facesOB_"$volnum" -R            
+	#		mv ${image} facesOB_"$volnum".nii
+			bet facesOB_"$volnum".nii b_facesOB_"$volnum".nii -R            
 			gunzip b_facesOB_"$volnum"*
 		done
 

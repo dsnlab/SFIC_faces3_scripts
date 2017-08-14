@@ -1,0 +1,14 @@
+sub-L064
+ses-wave1
+structurals
+
+Error: input image hires* not valid
+
+facesOB
+ses-wave2
+structurals
+facesOB
+ses-wave3
+structurals
+facesOB
+done
