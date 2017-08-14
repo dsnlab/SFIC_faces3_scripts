@@ -22,14 +22,14 @@
 # to run the script
 #------------------------------------------------------
 # paths
-rpDir = '/projects/dsnlab/SFIC_Faces3/fMRI/analysis/fx/motion/auto-motion-output/rp_txt/'
-outputDir = '/projects/dsnlab/SFIC_Faces3/fMRI/analysis/fx/motion/auto-motion-output/'
-rpOutputDir = '/projects/dsnlab/SFIC_Faces3/fMRI/analysis/fx/motion/auto-motion-output/rp_auto_txt/'
-plotDir = '/projects/dsnlab/SFIC_Faces3/fMRI/analysis/fx/motion/auto-motion-output/plots/'
+rpDir = '/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/analysis/fx/motion/auto-motion-output/rp_txt/'
+outputDir = '/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/analysis/fx/motion/auto-motion-output/'
+rpOutputDir = '/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/analysis/fx/motion/auto-motion-output/rp_auto_txt/'
+plotDir = '/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/analysis/fx/motion/auto-motion-output/plots/'
 
 # variables
 study = "SFIC_Faces3"
-rpPattern = "^rp_b_facesOB([0-9]{3})_(.*).txt"
+rpPattern = "^rp_([0-9]{3})_(.*).txt"
 rpCols = c("euclidian_trans","euclidian_rot","euclidian_trans_deriv","euclidian_rot_deriv","trash.rp")
 
 # write new rp_txt and plots files?
