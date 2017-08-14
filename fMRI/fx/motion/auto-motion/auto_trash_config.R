@@ -29,7 +29,7 @@ plotDir = '/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/analysis/fx/motion/a
 
 # variables
 study = "SFIC_Faces3"
-rpPattern = "^rp_([0-9]{3})_(.*).txt"
+rpPattern = "^rp_sub-L([0-9]{3})_(.*).txt"
 rpCols = c("euclidian_trans","euclidian_rot","euclidian_trans_deriv","euclidian_rot_deriv","trash.rp")
 
 # write new rp_txt and plots files?

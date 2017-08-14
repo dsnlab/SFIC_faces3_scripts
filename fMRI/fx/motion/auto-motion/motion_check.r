@@ -53,11 +53,11 @@ library(stringr)
 #	!!: Make sure the directories below exist. This script will not make them.
 #
 # base directory for subjects
-subjsDir<-'/projects/dsnlab/SFIC_Faces3/fMRI/subjects' 
+subjsDir<-'/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/subjects' 
 # requires trailing '/' - this is the path to prepend to output pdf filename. 
-motionPDFdir<-'/projects/dsnlab/SFIC_Faces3/fMRI/analysis/fx/motion/auto-motion-output/' 
+motionPDFdir<-'/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/analysis/fx/motion/auto-motion-output/' 
 # requires trailing '/' - this is where the augmented rp_*txt files go
-motion_rp_txt_dir<-'/projects/dsnlab/SFIC_Faces3/fMRI/analysis/fx/motion/auto-motion-output/rp_txt/'
+motion_rp_txt_dir<-'/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/analysis/fx/motion/auto-motion-output/rp_txt/'
 
 
 #

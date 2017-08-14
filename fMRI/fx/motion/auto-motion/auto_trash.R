@@ -43,7 +43,7 @@ if(!require(ggplot2)){
   install.packages('ggplot2',repos=osuRepo)
 }
 
-source('/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/fx/motion/auto-motion/auto-motion/auto_trash_config.R')
+source('/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/fx/motion/auto-motion/auto_trash_config.R')
 #------------------------------------------------------
 # load global intensity data
 #------------------------------------------------------
