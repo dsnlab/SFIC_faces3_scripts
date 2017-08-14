@@ -1,0 +1,8 @@
+sub-L018
+ses-*
+structurals
+
+Error: input image hires* not valid
+
+facesOB
+done

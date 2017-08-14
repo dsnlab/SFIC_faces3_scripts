@@ -41,7 +41,7 @@ if(!require(ggplot2)){
 }
 library(ggplot2)
 if(!require(pracma)){
-	install.packages('pracma')
+	install.packages('pracma',repos=osuRepo)
 }
 library(pracma)
 if(!require(stringr)){
@@ -53,11 +53,11 @@ library(stringr)
 #	!!: Make sure the directories below exist. This script will not make them.
 #
 # base directory for subjects
-subjsDir<-'/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/subjects' 
+subjsDir<-'/projects/dsnlab/SFIC_Faces3/fMRI/subjects' 
 # requires trailing '/' - this is the path to prepend to output pdf filename. 
-motionPDFdir<-'/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/analysis/fx/motion/auto-motion-output/' 
+motionPDFdir<-'/projects/dsnlab/SFIC_Faces3/fMRI/analysis/fx/motion/auto-motion-output/' 
 # requires trailing '/' - this is where the augmented rp_*txt files go
-motion_rp_txt_dir<-'/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/analysis/fx/motion/auto-motion-output/rp_txt/'
+motion_rp_txt_dir<-'/projects/dsnlab/SFIC_Faces3/fMRI/analysis/fx/motion/auto-motion-output/rp_txt/'
 
 
 #
@@ -70,7 +70,7 @@ motion_rp_txt_dir<-'/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/analysis/fx
 # "t165/ppc/functionals/vid2/rp_vid2_0001.txt" in its entirety, but the 
 # parentheses will allow us to pick out just the 't165'.
 #
-sid_regex<-'^sub-L([0-9]{3})/.*txt' #add regular expression for subject ID between the `()`
+sid_regex<-'(^sub-L[0-9]{3})/.*txt' #add regular expression for subject ID between the `()`
 rid_regex<-'^sub-L[0-9]{3}/(ses-wave[1-3]{1})/.*txt' #add regular expression for run ID between `()`
 
 #
@@ -393,7 +393,6 @@ write.csv(
   someSummary,
   file=paste(motionPDFdir,'summary_by_subject_by_run.csv',sep=''),
   row.names=F)
-
 
 
 motionWrittenToFile<-rawmotion %>% 

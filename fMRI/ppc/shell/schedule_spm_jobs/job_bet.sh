@@ -8,10 +8,11 @@
 # and calling on subject_list.txt
 #
 
+module load fsl
 
 echo ${SUBID}
 
-cd /projects/dsnlab/SFIC_Faces3/fMRI/${SUBID}
+cd /projects/dsnlab/SFIC_Faces3/fMRI/subjects/${SUBID}/
 
 	for wave in ses-*; do
 		echo "${wave}"
@@ -20,7 +21,7 @@ cd /projects/dsnlab/SFIC_Faces3/fMRI/${SUBID}
 		# betting structural image
 		cd structurals
 		echo "structurals"
-		fn=*hires*
+		fn=hires*
 		#mv sub* hires.nii
 		bet ${fn} b_hires -R
 		gunzip b_hires.nii.gz            
@@ -32,7 +33,7 @@ cd /projects/dsnlab/SFIC_Faces3/fMRI/${SUBID}
 
 		for image in $(ls *.nii); do
 			volnum="$(echo "${image}" | sed 's/[^0-9]//g')"
-			#mv ${image} facesOB_"$volnum".nii
+			mv ${image} facesOB_"$volnum".nii
 			bet facesOB_"$volnum".nii b_facesOB_"$volnum" -R            
 			gunzip b_facesOB_"$volnum"*
 		done
