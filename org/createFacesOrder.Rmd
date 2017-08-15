@@ -1,0 +1,31 @@
+---
+title: "createFacesOrder"
+author: "Nandi"
+date: "15 August 2017"
+output: html_document
+---
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+setwd("/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/org")
+order <- read.csv("SFIC_to_sfiz_IDs.csv", header=T)
+order <- setNames(order, c("sfizID","sub","order"))
+order$sub <- sprintf("%03d", order$sub)
+order$sub <- sub("^", "sub-L", order$sub)
+
+IDs <- read.csv("subject_list.txt", header=F)
+IDs <- setNames(IDs, "sub")
+
+order <- merge(IDs, order, by = "sub", all.x=T)
+
+write.csv(order, file="FacesOrder.csv",row.names=F)
+```
+
+```{r, echo=FALSE}
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
