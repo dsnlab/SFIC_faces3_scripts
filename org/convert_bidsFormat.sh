@@ -12,12 +12,24 @@ mridir="MRI_toBeSorted"
 bidsdir="bids_data"
 
 #create log
-log="$projectdir"/"scripts/org/output_SFIC_convert.txt"
+log="$projectdir"/"SFIC_faces3_scripts/org/output_SFIC_convert.txt"
 touch "${log}"
+
+list="L001_628188
+L018_928226
+L036_752314
+L045_427253
+L061_136432
+L064_534476
+L065_326475
+L076_525498
+L079_333516
+L087_756523"
 
 #run conversion
 cd "$projectdir"/"$mridir"
-for sub in L*; do
+for sub in $list; do
+#for sub in L*; do	(originally did for all subject folders, but then re-ran with the subject list above)
 	subid="$(echo "${sub}" | awk '{print substr($0,0,4)}')"
 	echo "${subid}"
 	cd "$sub"

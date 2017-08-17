@@ -2,7 +2,7 @@
 #Created by NV 08/15/2017
 #Copies template multicond files to subject-specific files
 
-modeldir="/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/fx/models/"
+modeldir="/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/fx/multiconds/"
 templatedir="orderTemplates"
 subjectdir="subjectSpecific"
 
