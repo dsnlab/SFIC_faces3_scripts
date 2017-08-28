@@ -21,13 +21,13 @@ STUDY=/projects/dsnlab/SFIC_Faces3/SFIC_faces3_scripts
 SUBJLIST=`cat subject_list.txt`
 
 #Which SID should be replaced?
-REPLACESID='109'
+REPLACESID='sub-L001'
 
 #SPM Path
 SPM_PATH=/projects/dsnlab/SPM12
 
 # Set MATLAB script path
-SCRIPT=${STUDY}/fMRI/fx/models/all_emotions/fx_job.m
+SCRIPT=${STUDY}/fMRI/fx/models/all_emotions/fx.m
 
 # Tag the results files
 RESULTS_INFIX=fx_facesOB
