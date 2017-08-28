@@ -7,17 +7,17 @@ projectDir = '/Volumes/psych-cog/dsnlab/'
 johnDir = '/Volumes/psych-cog/dsnlab/Archived/sfiz/subjects/'
 daniDir = '/Volumes/psych-cog/dsnlab/SFIC_Self3/archive/raw_nii/'
 nandiDir = '/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/subjects/'
-jobDir = '/Volumes/psych-cog/dsnlab/SFIC/scripts/fMRI/ppc/spm/QC_alignment_DaniJohn/';
+jobDir = '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/ppc/spm/QC_alignment_DaniJohn/';
 
 addpath(projectDir)
 
-idDir = '/Volumes/psych-cog/dsnlab/SFIC/scripts/org'
+idDir = '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/org'
 cd(idDir)
 [oldID] = csvread('SFIC_to_sfiz_IDs.csv',1,0);
 
 % loop through subjects and replace subject ID, wave, reo parameters
 
-for subCount = 1:96;
+for subCount = 1:97;
     
 	if subCount < 10
 		subID = ['sub-L00',num2str(subCount)];

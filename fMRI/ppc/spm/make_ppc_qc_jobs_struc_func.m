@@ -2,12 +2,12 @@
 % 5.11.2017
 
 % define paths
-jobDir = '/Volumes/psych-cog/dsnlab/SFIC/scripts/fMRI/ppc/spm/QC_alignment_struc_func/';
+jobDir = '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/ppc/spm/QC_alignment_struc_func/';
 
 addpath(jobDir)
 
 % loop through subjects and replace subject ID, wave, reo parameters
-for subCount = 1:96;
+for subCount = 1:97;
 	if subCount < 10
 		subID = ['sub-L00',num2str(subCount)];
 	else
