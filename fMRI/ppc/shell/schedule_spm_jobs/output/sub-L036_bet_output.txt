@@ -1,8 +1,5 @@
 sub-L036
 ses-wave1
 structurals
-
-Error: input image hires* not valid
-
 facesOB
 done

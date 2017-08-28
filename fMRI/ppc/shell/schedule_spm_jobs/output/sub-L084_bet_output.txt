@@ -4,9 +4,6 @@ structurals
 facesOB
 ses-wave2
 structurals
-
-Error: input image hires* not valid
-
 facesOB
 ses-wave3
 structurals
