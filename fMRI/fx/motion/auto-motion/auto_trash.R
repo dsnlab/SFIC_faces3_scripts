@@ -102,9 +102,9 @@ trash = intensities %>%
          trash.auto = ifelse(Diff.sd > (meanDiff.sd + 3*sdDiff.sd) | Diff.sd < (meanDiff.sd - 3*sdDiff.sd), 1, trash.auto),
          
          # code volumes with more than +/- .3mm translation in Euclidian distance
-         trash.auto = ifelse(euclidian_trans_deriv > .3 | euclidian_trans_deriv < -.3, 1, trash.auto),
+         trash.auto = ifelse(euclidian_trans_deriv > 1 | euclidian_trans_deriv < -1, 1, trash.auto),
          # code volumes with more than +/- .3mm translation in Euclidian distance
-         trash.auto = ifelse(euclidian_rot_deriv > .3 | euclidian_rot_deriv < -.3, 1, trash.auto),
+         trash.auto = ifelse(euclidian_rot_deriv > 1 | euclidian_rot_deriv < -1, 1, trash.auto),
          
          # recode as trash if volume behind and in front are both marked as trash
          trash.auto = ifelse(trash.auto == 0 & lag(trash.auto) == 1 & lead(trash.auto) == 1, 1, trash.auto),
