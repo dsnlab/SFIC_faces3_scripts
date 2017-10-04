@@ -27,10 +27,10 @@ REPLACESID='001'
 SPM_PATH=/projects/dsnlab/SPM12
 
 # Set MATLAB script path
-SCRIPT=${STUDY}/fMRI/fx/models/all_emotions/fx_t1_allCon_job.m
+SCRIPT=${STUDY}/fMRI/fx/models/all_emotions/fx_t1_job.m
 
 # Tag the results files
-RESULTS_INFIX=fx_t1_facesOB_allCon
+RESULTS_INFIX=fx_t1_facesOB
 
 # Set output dir
 OUTPUTDIR=${STUDY}/fMRI/fx/shell/schedule_spm_jobs/output
