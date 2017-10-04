@@ -42,4 +42,7 @@ matlabbatch{4}.spm.stats.con.consess{4}.tcon.sessrep = 'none';
 matlabbatch{4}.spm.stats.con.consess{5}.tcon.name = 't1_N';
 matlabbatch{4}.spm.stats.con.consess{5}.tcon.weights = [0 0 0 0 1 0 0 0 0 0];
 matlabbatch{4}.spm.stats.con.consess{5}.tcon.sessrep = 'none';
+matlabbatch{4}.spm.stats.con.consess{6}.tcon.name = 't1_all';
+matlabbatch{4}.spm.stats.con.consess{6}.tcon.weights = [1 1 1 1 1 0 0 0 0 0];
+matlabbatch{4}.spm.stats.con.consess{6}.tcon.sessrep = 'none';
 matlabbatch{4}.spm.stats.con.delete = 0;
