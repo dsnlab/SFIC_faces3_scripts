@@ -11,7 +11,7 @@
 
 module load prl afni
 
-cd /projects/dsnlab/SFIC_Faces33/fMRI/analysis/rx/AFNI/allAff_pds_male/
+cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/allAff_pds_male/
 
 3dLME -prefix allAff_pds_male \
 -jobs 8 \
@@ -21,7 +21,7 @@ cd /projects/dsnlab/SFIC_Faces33/fMRI/analysis/rx/AFNI/allAff_pds_male/
 -qVars "pdss_c,pdss_c2" \
 -qVarCenters "0,0" \
 -resid	all_residuals	\
--num_glt 4 \
+-num_glt 2 \
 -gltLabel 1 'pdss' -gltCode  1 'pdss_c : ' \
 -gltLabel 2 'pdss_sq' -gltCode  2 'pdss_c2 : ' \
 -dataTable \

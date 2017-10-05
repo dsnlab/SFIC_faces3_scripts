@@ -11,7 +11,7 @@
 
 module load prl afni
 
-cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/ttest/
+cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/allAff_age/
 
 3dLME -prefix allAff_age \
 -jobs 8 \

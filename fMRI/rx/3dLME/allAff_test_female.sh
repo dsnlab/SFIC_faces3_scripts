@@ -21,7 +21,7 @@ cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/allAff_test_female/
 -qVars "test_c,test_c2" \
 -qVarCenters "0,0" \
 -resid	all_residuals	\
--num_glt 4 \
+-num_glt 2 \
 -gltLabel 1 'test' -gltCode  1 'test_c : ' \
 -gltLabel 2 'test_sq' -gltCode  2 'test_c2 : ' \
 -dataTable \
