@@ -5,7 +5,7 @@
 #Execute on CAS
 
 #set paths
-projectdir="/projects/dsnlab/SFIC_Faces"
+projectdir="/projects/dsnlab/SFIC_Faces3"
 fxmodelsdir="fMRI/analysis/fx/models"
 AFNIfxdir="fMRI/analysis/rx/AFNI/FX_models"
 
