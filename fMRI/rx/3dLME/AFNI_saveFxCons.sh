@@ -5,9 +5,9 @@
 #Execute on CAS
 
 #set paths
-projectdir="/Volumes/psych-cog/dsnlab/SFIC"
-fxmodelsdir="nonbids_data/fMRI/analysis/fx/models"
-AFNIfxdir="nonbids_data/fMRI/analysis/rx/AFNI/FX_models"
+projectdir="/projects/dsnlab/SFIC_Faces"
+fxmodelsdir="fMRI/analysis/fx/models"
+AFNIfxdir="fMRI/analysis/rx/AFNI/FX_models"
 
 model="all_emotions"
 
@@ -23,7 +23,7 @@ for sub in sub*; do
 		echo "${wave}"
 		cd $wave
 
-		for con in con_0006*; do
+		for con in con**; do
 			fname="$sub"_"$wave"_"$con"
 			cp $con "$projectdir"/"$AFNIfxdir"/"$fname"
 		done

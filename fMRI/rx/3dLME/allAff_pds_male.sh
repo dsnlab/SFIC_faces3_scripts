@@ -1,9 +1,9 @@
 #!/bin/bash
 #--------------------------------------------------------------
 #
-#SBATCH --job-name=allAff_age
-#SBATCH --output=output/allAff_age.log
-#SBATCH --error=output/allAff_age_error.log
+#SBATCH --job-name=allAff_pds_male
+#SBATCH --output=output/allAff_pds_male.log
+#SBATCH --error=output/allAff_pds_male_error.log
 #SBATCH --cpus-per-task=25
 #SBATCH --ntasks=1
 #SBATCH --mem-per-cpu=4000
