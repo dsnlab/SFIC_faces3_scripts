@@ -84,7 +84,7 @@ write.table(age_allAff, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI
 ## create pds files
 ```{r}
 # load age
-pds_covariate = read.csv("/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/pdss.csv")
+pds_covariate = read.csv("/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/pds.csv")
 
 pds_covariate_female <- pds_covariate %>%
   filter(gender == "female")
@@ -236,7 +236,7 @@ test_covariate_male = test_covariate_male %>%
 
 test_allAff_male = left_join(test_covariate_male, fxCons_allAff, by = c("subid", "wave")) %>%
   mutate(Subj = subid) %>%
-  select(Subj, gender, contains("age_c"), InputFile) %>%
+  select(Subj, gender, contains("_c"), InputFile) %>%
   mutate(Subj = sprintf("%02d", Subj)) %>%
   arrange(Subj)
   
