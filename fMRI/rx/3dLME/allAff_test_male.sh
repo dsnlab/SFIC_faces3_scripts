@@ -21,93 +21,86 @@ cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/allAff_test_male/
 -qVars "test_c,test_c2" \
 -qVarCenters "0,0" \
 -resid	all_residuals	\
--num_glt 2 \
--gltLabel 1 'test' -gltCode  1 'test_c : ' \
--gltLabel 2 'test_sq' -gltCode  2 'test_c2 : ' \
 -dataTable \
-	Subj	gender	test_c	test_c2	age_c	age_c2	InputFile	\
-	05	male	-48.9331305882353	2394.45126916529	-2.49581006535948	6.22906788234967	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L005_ses-wave1_con_0006.nii	\
-	05	male	-20.4846305882353	419.620090336465	0.565189934640523	0.319439662218959	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L005_ses-wave2_con_0006.nii	\
-	05	male	83.5748694117647	6984.75879719353	4.25118993464053	18.0726158603889	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L005_ses-wave3_con_0006.nii	\
-	08	male	-41.9261305882353	1757.80042610176	1.15718993464052	1.33908854483334	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L008_ses-wave2_con_0006.nii	\
-	09	male	-53.1646305882353	2826.47794558352	-2.85681006535948	8.16136374953921	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L009_ses-wave1_con_0006.nii	\
-	09	male	-51.3286305882353	2634.62831806352	0.254189934640523	0.0646125228725536	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L009_ses-wave2_con_0006.nii	\
-	11	male	-57.2616305882353	3278.89433762352	-2.48481006535948	6.17428106091176	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L011_ses-wave1_con_0006.nii	\
-	11	male	-24.1481305882353	583.132210906465	0.515189934640524	0.265420668754908	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L011_ses-wave2_con_0006.nii	\
-	14	male	-28.8316305882353	831.262922376465	-2.49081006535948	6.20413478169608	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L014_ses-wave1_con_0006.nii	\
-	15	male	-48.3196305882353	2334.78670018352	-2.63781006535948	6.95804194091176	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L015_ses-wave1_con_0006.nii	\
-	17	male	-49.5141305882353	2451.64912790882	-1.98481006535948	3.93947099555229	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L017_ses-wave1_con_0006.nii	\
-	17	male	-3.57763058823529	12.7994406258768	0.943189934640523	0.889607252807195	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L017_ses-wave2_con_0006.nii	\
-	18	male	-41.4931305882353	1721.67988601235	-2.59081006535948	6.71229679476797	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L018_ses-wave1_con_0006.nii	\
-	18	male	-51.2501305882353	2626.57588531117	0.690189934640523	0.47636214587909	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L018_ses-wave2_con_0006.nii	\
-	18	male	35.3833694117647	1251.98283092941	4.05018993464052	16.4040385066634	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L018_ses-wave3_con_0006.nii	\
-	26	male	-34.8646305882353	1215.54246605411	-2.49081006535948	6.20413478169608	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L026_ses-wave1_con_0006.nii	\
-	28	male	-20.7351305882353	429.945640511171	-2.44881006535948	5.99667073620588	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L028_ses-wave1_con_0006.nii	\
-	28	male	4.08686941176471	16.702501588818	0.437189934640523	0.191135038950985	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L028_ses-wave2_con_0006.nii	\
-	28	male	173.105869411765	29965.6420248029	4.14818993464052	17.2074797338529	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L028_ses-wave3_con_0006.nii	\
-	30	male	-37.0186305882353	1370.37901062823	-2.92081006535948	8.53113143790522	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L030_ses-wave1_con_0006.nii	\
-	30	male	80.5728694117647	6491.98728524529	0.787412156862723	0.620017904775206	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L030_ses-wave2_con_0006.nii	\
-	30	male	124.666869411765	15541.82832893	3.83218993464052	14.6856796951601	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L030_ses-wave3_con_0006.nii	\
-	33	male	-44.1986305882353	1953.51894587529	-2.84081006535948	8.07020182744771	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L033_ses-wave1_con_0006.nii	\
-	33	male	-24.9751305882353	623.757147899406	0.318189934640523	0.101244834506541	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L033_ses-wave2_con_0006.nii	\
-	33	male	59.3083694117647	3517.48268228235	3.80408993464052	14.4711002308333	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L033_ses-wave3_con_0006.nii	\
-	34	male	-48.4806305882353	2350.37154223293	-2.60181006535948	6.76941561620588	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L034_ses-wave1_con_0006.nii	\
-	34	male	-8.00213058823529	64.0340939511709	1.05118993464052	1.10500027868955	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L034_ses-wave2_con_0006.nii	\
-	37	male	-9.86393058823529	97.2971266495238	-2.54281006535948	6.46588302849346	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L037_ses-wave1_con_0006.nii	\
-	38	male	-44.2236305882353	1955.7295024047	-1.83781006535948	3.37754583633661	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L038_ses-wave1_con_0006.nii	\
-	38	male	-0.654630588235293	0.428541207053285	0.871189934640524	0.758971902218961	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L038_ses-wave2_con_0006.nii	\
-	38	male	159.677369411765	25496.8623022612	4.84018993464052	23.4274386033954	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L038_ses-wave3_con_0006.nii	\
-	40	male	-22.2107305882353	493.316553263171	-2.57881006535948	6.65026135319935	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L040_ses-wave1_con_0006.nii	\
-	40	male	32.6733694117647	1067.54906871764	0.223189934640523	0.0498137469248409	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L040_ses-wave2_con_0006.nii	\
-	47	male	-36.6138305882353	1340.57259034399	-1.94081006535948	3.76674370980066	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L047_ses-wave1_con_0006.nii	\
-	52	male	-28.8908305882353	834.680092078112	-2.57081006535948	6.60906439215359	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L052_ses-wave1_con_0006.nii	\
-	53	male	-35.2115305882353	1239.85188636623	-2.57681006535948	6.63995011293791	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L053_ses-wave1_con_0006.nii	\
-	55	male	-46.8115305882353	2191.31939601329	-2.59581006535948	6.73822989542157	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L055_ses-wave1_con_0006.nii	\
-	55	male	60.1323694117647	3615.90185107294	1.00130104575162	1.0026037842233	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L055_ses-wave2_con_0006.nii	\
-	55	male	96.6233694117647	9336.07551648235	4.73018993464052	22.3746968177745	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L055_ses-wave3_con_0006.nii	\
-	61	male	-31.5055305882353	992.598457646229	-2.42081006535948	5.86032137254575	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L061_ses-wave1_con_0006.nii	\
-	62	male	-36.3238305882353	1319.42066860282	-1.89881006535948	3.60547966431046	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L062_ses-wave1_con_0006.nii	\
-	63	male	-23.4611305882353	550.42464847823	-2.55981006535948	6.55262757071569	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L063_ses-wave1_con_0006.nii	\
-	64	male	-35.9103305882353	1289.55184295635	-2.59281006535948	6.72266403502941	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L064_ses-wave1_con_0006.nii	\
-	64	male	111.881869411765	12517.5527030712	0.940189934640523	0.883957113199352	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L064_ses-wave2_con_0006.nii	\
-	64	male	78.3223694117647	6134.39355027293	4.54018993464052	20.6133246426111	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L064_ses-wave3_con_0006.nii	\
-	67	male	-35.9741305882353	1294.13807157941	-2.46281006535948	6.06543341803595	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L067_ses-wave1_con_0006.nii	\
-	70	male	-49.6036305882353	2460.52016753411	-2.48781006535948	6.18919892130392	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L070_ses-wave1_con_0006.nii	\
-	70	male	5.66586941176472	32.1020761911711	0.726301045751624	0.527513209059903	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L070_ses-wave2_con_0006.nii	\
-	70	male	97.5048694117647	9507.19955900529	3.87018993464052	14.9783701301928	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L070_ses-wave3_con_0006.nii	\
-	71	male	-53.2701305882353	2837.70681288764	-1.84881006535948	3.41809865777451	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L071_ses-wave1_con_0006.nii	\
-	71	male	33.1003694117647	1095.63445519529	1.48741215686272	2.21239492438302	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L071_ses-wave2_con_0006.nii	\
-	73	male	-39.0181305882353	1522.41451460058	-2.28481006535948	5.22035703476797	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L073_ses-wave1_con_0006.nii	\
-	73	male	-2.12713058823529	4.52468453940621	0.704189934640524	0.495883464049026	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L073_ses-wave2_con_0006.nii	\
-	73	male	46.9043694117647	2200.01986991529	3.64318993464052	13.272832899866	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L073_ses-wave3_con_0006.nii	\
-	74	male	-57.5366305882353	3310.46385944705	-1.90181006535948	3.61688152470262	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L074_ses-wave1_con_0006.nii	\
-	74	male	-37.7451305882353	1424.69488312293	0.304189934640524	0.0925315163366063	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L074_ses-wave2_con_0006.nii	\
-	74	male	67.5323694117647	4560.62091836705	3.94018993464053	15.5250967210425	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L074_ses-wave3_con_0006.nii	\
-	75	male	-46.1581305882353	2130.57301940058	-1.83181006535948	3.35552811555229	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L075_ses-wave1_con_0006.nii	\
-	76	male	-44.1401305882353	1948.35112834646	-2.07081006535948	4.28825432679412	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L076_ses-wave1_con_0006.nii	\
-	76	male	47.0103694117647	2209.97483223058	0.759189934640524	0.576369356859483	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L076_ses-wave2_con_0006.nii	\
-	76	male	93.2493694117647	8695.44489569176	5.17018993464052	26.7308639602582	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L076_ses-wave3_con_0006.nii	\
-	78	male	-36.4971305882353	1332.0405411747	-1.92081006535948	3.68951130718627	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L078_ses-wave1_con_0006.nii	\
-	78	male	18.2503694117647	333.075983665877	0.801189934640524	0.641905311369287	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L078_ses-wave2_con_0006.nii	\
-	78	male	66.1908694117647	4381.23119348529	4.91018993464052	24.1099651942451	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L078_ses-wave3_con_0006.nii	\
-	79	male	-47.4656305882353	2252.98608713882	-2.12681006535948	4.52332105411438	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L079_ses-wave1_con_0006.nii	\
-	81	male	-48.8176305882353	2383.16105624941	-2.15381006535948	4.63889779764379	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L081_ses-wave1_con_0006.nii	\
-	81	male	-38.8686305882353	1510.7704438047	-0.0318100653594762	0.00101188025817415	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L081_ses-wave2_con_0006.nii	\
-	84	male	51.5773694117647	2660.22503543764	0.601301045751624	0.361562947621997	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L084_ses-wave2_con_0006.nii	\
-	84	male	74.9553694117647	5618.30740365411	4.22018993464052	17.8100030844412	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L084_ses-wave3_con_0006.nii	\
-	86	male	-34.3811305882353	1182.06214052529	-1.95681006535948	3.82910563189216	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L086_ses-wave1_con_0006.nii	\
-	86	male	19.7608694117647	390.491959908818	0.765189934640524	0.58551563607517	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L086_ses-wave2_con_0006.nii	\
-	86	male	140.699869411765	19796.4532524876	4.99618993464052	24.9619138630033	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L086_ses-wave3_con_0006.nii	\
-	87	male	-45.2396305882353	2046.62417575999	-2.21281006535948	4.89652838535621	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L087_ses-wave1_con_0006.nii	\
-	87	male	9.26386941176472	85.81927647823	0.571189934640524	0.326257941434646	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L087_ses-wave2_con_0006.nii	\
-	87	male	68.1603694117647	4645.83595834823	3.88458993464052	15.0900389603105	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L087_ses-wave3_con_0006.nii	\
-	88	male	-43.3621305882353	1880.27436915117	-2.24081006535948	5.02122974901634	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L088_ses-wave1_con_0006.nii	\
-	88	male	-7.78663058823529	60.6316159176415	0.892967712418324	0.797391335421615	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L088_ses-wave2_con_0006.nii	\
-	89	male	-54.7446305882353	2996.97457824235	-2.20381006535948	4.85677880417974	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L089_ses-wave1_con_0006.nii	\
-	89	male	-32.1446305882353	1033.27727565411	0.793189934640523	0.629150272415037	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L089_ses-wave2_con_0006.nii	\
-	89	male	29.5678694117647	874.258901551171	4.14018993464052	17.1411726948987	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L089_ses-wave3_con_0006.nii	\
-	90	male	-40.0491305882353	1603.93286087352	-2.52381006535948	6.36961724600981	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L090_ses-wave1_con_0006.nii	\
-	90	male	-6.09463058823529	37.1445220070532	-0.00181006535947681	0.00000327633660557791	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L090_ses-wave2_con_0006.nii	\
-	90	male	35.1008694117647	1232.07103346176	3.31218993464052	10.970602163134	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L090_ses-wave3_con_0006.nii	\
-	93	male	-57.6331305882353	3321.57774140058	-2.68481006535948	7.20820508705556	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L093_ses-wave1_con_0006.nii	\
-	97	male	-55.6576305882353	3097.77184269646	-2.53781006535948	6.44047992783987	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L097_ses-wave1_con_0006.nii	
+Subj	gender	test_c	test_c2	age_c	age_c2	InputFile \
+05	male	-50.5902111111111	2559.36946026679	-2.54780068587106	6.49128833492503	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L005_ses-wave1_con_0006.nii \
+05	male	-22.1417111111111	490.255370927901	0.513199314128943	0.263373536022418	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L005_ses-wave2_con_0006.nii \
+05	male	81.9177888888889	6710.52413644457	4.19919931412895	17.633274879781	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L005_ses-wave3_con_0006.nii \
+08	male	-43.5832111111111	1899.49629075568	1.10519931412894	1.22146552395109	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L008_ses-wave2_con_0006.nii \
+09	male	-54.8217111111111	3005.42000915012	-2.90880068587106	8.46112143012392	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L009_ses-wave1_con_0006.nii \
+09	male	-52.9857111111111	2807.48558195012	0.202199314128944	0.0408845626342152	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L009_ses-wave2_con_0006.nii \
+11	male	-25.8052111111111	665.908920489012	0.463199314128945	0.214553604609525	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L011_ses-wave2_con_0006.nii \
+14	male	-30.4887111111111	929.56150521679	-2.54280068587106	6.46583532806631	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L014_ses-wave1_con_0006.nii \
+15	male	-49.9767111111111	2497.67165348346	-2.68980068587106	7.2350277297124	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L015_ses-wave1_con_0006.nii \
+17	male	-51.1712111111111	2618.4928465779	-2.03680068587106	4.1485570339648	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L017_ses-wave1_con_0006.nii \
+17	male	-5.2347111111111	27.40220041679	0.891199314128944	0.794236217503899	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L017_ses-wave2_con_0006.nii \
+18	male	-43.1502111111111	1861.94071893346	-2.64280068587106	6.98439546524052	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L018_ses-wave1_con_0006.nii \
+18	male	-52.9072111111111	2799.17298755568	0.638199314128943	0.407298364554654	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L018_ses-wave2_con_0006.nii \
+18	male	33.7262888888889	1137.46256221679	3.99819931412894	15.9855977555012	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L018_ses-wave3_con_0006.nii \
+26	male	-36.5217111111111	1333.83538248346	-2.54280068587106	6.46583532806631	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L026_ses-wave1_con_0006.nii \
+28	male	-22.3922111111111	501.411118444567	-2.50080068587106	6.25400407045314	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L028_ses-wave1_con_0006.nii \
+28	male	2.42978888888889	5.90387404456792	0.385199314128943	0.148378511605408	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L028_ses-wave2_con_0006.nii \
+28	male	171.448788888889	29394.6872114668	4.09619931412894	16.7788488210704	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L028_ses-wave3_con_0006.nii \
+30	male	-38.6757111111111	1495.81062995012	-2.97280068587106	8.83754391791542	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L030_ses-wave1_con_0006.nii \
+30	male	78.9157888888889	6227.70173595568	0.735421536351144	0.540844836129076	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L030_ses-wave2_con_0006.nii \
+30	male	123.009788888889	15131.408162489	3.78019931412894	14.2899068545409	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L030_ses-wave3_con_0006.nii \
+33	male	-45.8557111111111	2102.74624150568	-2.89280068587106	8.36829580817605	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L033_ses-wave1_con_0006.nii \
+33	male	-26.6322111111111	709.27466866679	0.266199314128944	0.07086207484272	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L033_ses-wave2_con_0006.nii \
+33	male	57.6512888888889	3323.67111055012	3.75209931412894	14.0782492630869	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L033_ses-wave3_con_0006.nii \
+34	male	-9.65921111111111	93.3003592890122	0.999199314128944	0.998399269355752	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L034_ses-wave2_con_0006.nii \
+37	male	-11.5210111111111	132.733697022346	-2.59480068587106	6.7329905993969	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L037_ses-wave1_con_0006.nii \
+38	male	-45.8807111111111	2105.03965206123	-1.88980068587106	3.57134663231872	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L038_ses-wave1_con_0006.nii \
+38	male	-2.31171111111111	5.34400826123456	0.819199314128944	0.671087516269333	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L038_ses-wave2_con_0006.nii \
+38	male	158.020288888889	24970.4117005279	4.78819931412894	22.9268526718249	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L038_ses-wave3_con_0006.nii \
+40	male	-23.8678111111111	569.672407235679	-2.63080068587106	6.92111224877962	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L040_ses-wave1_con_0006.nii \
+40	male	31.0162888888889	962.010176439013	0.171199314128943	0.0293092051582205	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L040_ses-wave2_con_0006.nii \
+47	male	-38.2709111111111	1464.66263727457	-1.99280068587106	3.97125457360815	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L047_ses-wave1_con_0006.nii \
+52	male	-30.5479111111111	933.174873252345	-2.62280068587106	6.87908343780568	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L052_ses-wave1_con_0006.nii \
+53	male	-36.8686111111111	1359.29448526235	-2.62880068587106	6.91059304603613	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L053_ses-wave1_con_0006.nii \
+55	male	-48.4686111111111	2349.20626304012	-2.64780068587106	7.01084847209924	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L055_ses-wave1_con_0006.nii \
+55	male	58.4752888888889	3419.35941063901	0.949310425240045	0.901190283469434	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L055_ses-wave2_con_0006.nii \
+55	male	94.9662888888889	9018.5960253279	4.67819931412894	21.8855488227165	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L055_ses-wave3_con_0006.nii \
+61	male	-33.1626111111111	1099.75877570679	-2.47280068587106	6.11474323204436	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L061_ses-wave1_con_0006.nii \
+62	male	-37.9809111111111	1442.54960883012	-1.95080068587106	3.80562331599499	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L062_ses-wave1_con_0006.nii \
+63	male	-25.1182111111111	630.924529422346	-2.61180068587106	6.82150282271652	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L063_ses-wave1_con_0006.nii \
+64	male	-37.5674111111111	1411.31037759123	-2.64480068587106	6.99497066798401	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L064_ses-wave1_con_0006.nii \
+64	male	110.224788888889	12149.5040856001	0.888199314128943	0.788898021619126	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L064_ses-wave2_con_0006.nii \
+64	male	76.6652888888889	5877.56652041679	4.48819931412894	20.1439330833475	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L064_ses-wave3_con_0006.nii \
+67	male	-37.6312111111111	1416.10804968901	-2.51480068587106	6.32422248965754	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L067_ses-wave1_con_0006.nii \
+70	male	-51.2607111111111	2627.66050361679	-2.53980068587106	6.45058752395108	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L070_ses-wave1_con_0006.nii \
+70	male	4.0087888888889	16.0703883556791	0.674310425240044	0.454694549587409	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L070_ses-wave2_con_0006.nii \
+70	male	95.8477888888889	9186.79863488901	3.81819931412894	14.5786460024147	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L070_ses-wave3_con_0006.nii \
+71	male	-54.9272111111111	3016.99852044457	-1.90080068587106	3.61304324740788	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L071_ses-wave1_con_0006.nii \
+71	male	31.4432888888889	988.680416150124	1.43542153635114	2.06043498702068	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L071_ses-wave2_con_0006.nii \
+73	male	-40.6752111111111	1654.47279893346	-2.33680068587106	5.46063744548744	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L073_ses-wave1_con_0006.nii \
+73	male	-3.78421111111111	14.3202537334567	0.652199314128945	0.425363945350266	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L073_ses-wave2_con_0006.nii \
+73	male	45.2472888888889	2047.31715179457	3.59119931412894	12.8967125138002	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L073_ses-wave3_con_0006.nii \
+74	male	-59.1937111111111	3503.89543510568	-1.95380068587106	3.81733712011021	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L074_ses-wave1_con_0006.nii \
+74	male	65.8752888888889	4339.55368619457	3.88819931412895	15.1180939063928	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L074_ses-wave3_con_0006.nii \
+75	male	-47.8152111111111	2286.29441360012	-1.88380068587106	3.54870502408826	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L075_ses-wave1_con_0006.nii \
+76	male	-45.7972111111111	2097.38454555568	-2.12280068587106	4.50628275193462	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L076_ses-wave1_con_0006.nii \
+76	male	45.3532888888889	2056.92081303901	0.707199314128944	0.500130869904449	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L076_ses-wave2_con_0006.nii \
+76	male	91.5922888888889	8389.14738390568	5.11819931412894	26.19596421915	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L076_ses-wave3_con_0006.nii \
+78	male	-38.1542111111111	1455.74382551123	-1.97280068587106	3.89194254617331	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L078_ses-wave1_con_0006.nii \
+78	male	16.5932888888889	275.337236150124	0.749199314128944	0.56129961229128	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L078_ses-wave2_con_0006.nii \
+78	male	64.5337888888889	4164.60990835568	4.85819931412894	23.6021005758029	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L078_ses-wave3_con_0006.nii \
+79	male	-49.1227111111111	2413.04074690568	-2.17880068587106	4.74717242875219	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L079_ses-wave1_con_0006.nii \
+81	male	-50.4747111111111	2547.69646175012	-2.20580068587106	4.86555666578922	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L081_ses-wave1_con_0006.nii \
+81	male	-40.5257111111111	1642.33326106123	-0.083800685871056	0.00702255495245941	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L081_ses-wave2_con_0006.nii \
+84	male	49.9202888888889	2492.03524275012	0.549310425240044	0.301741943277398	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L084_ses-wave2_con_0006.nii \
+84	male	73.2982888888889	5372.63915403901	4.16819931412894	17.373885522305	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L084_ses-wave3_con_0006.nii \
+86	male	-36.0382111111111	1298.75266008901	-2.00880068587106	4.03528019555603	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L086_ses-wave1_con_0006.nii \
+86	male	18.1037888888889	327.747172133457	0.713199314128945	0.508653261673997	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L086_ses-wave2_con_0006.nii \
+86	male	139.042788888889	19332.8971420001	4.94419931412894	24.4451068578331	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L086_ses-wave3_con_0006.nii \
+87	male	-46.8967111111111	2199.30151303901	-2.26480068587106	5.12932214672201	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L087_ses-wave1_con_0006.nii \
+87	male	66.5032888888889	4422.68743303901	3.83259931412894	14.6888175026616	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L087_ses-wave3_con_0006.nii \
+88	male	-45.0192111111111	2026.72936906679	-2.29280068587106	5.25693498513078	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L088_ses-wave1_con_0006.nii \
+88	male	-9.44371111111111	89.1836795501234	0.840977091906744	0.707242469111924	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L088_ses-wave2_con_0006.nii \
+89	male	-56.4017111111111	3181.15301626123	-2.25580068587106	5.08863673437633	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L089_ses-wave1_con_0006.nii \
+89	male	-33.8017111111111	1142.55567403901	0.741199314128943	0.549376423265216	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L089_ses-wave2_con_0006.nii \
+89	male	27.9107888888889	779.012136400123	4.08819931412894	16.7133736320444	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L089_ses-wave3_con_0006.nii \
+90	male	-41.7062111111111	1739.40804524457	-2.57580068587106	6.63474917333381	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L090_ses-wave1_con_0006.nii \
+90	male	-7.75171111111111	60.0890251501234	-0.0538006858710567	0.00289451380019612	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L090_ses-wave2_con_0006.nii \
+90	male	33.4437888888889	1118.48701524457	3.26019931412894	10.6288995678468	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L090_ses-wave3_con_0006.nii \
+93	male	-59.2902111111111	3515.32913360012	-2.73680068587106	7.49007799418429	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L093_ses-wave1_con_0006.nii \
+97	male	-57.3147111111111	3284.97610975012	-2.58980068587106	6.70706759253819	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L097_ses-wave1_con_0006.nii
