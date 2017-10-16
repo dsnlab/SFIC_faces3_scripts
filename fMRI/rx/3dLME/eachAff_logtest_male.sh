@@ -33,7 +33,7 @@ cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/eachAff_logtest_male/
 -gltLabel 9 'neutral_test' -gltCode  9 'affect : 1*neutral logtest_c : ' \
 -gltLabel 10 'neutral_test_sq' -gltCode  10 'affect : 1*neutral logtest_c2 : ' \
 -dataTable \
-Subj	gender	affect	test_c	test_c2	age_c	age_c2	InputFile \
+Subj	gender	affect	logtest_c	logtest_c2	age_c	age_c2	InputFile \
 05	male	angry	-1.04840474572613	1.09915251086108	-2.54780068587106	6.49128833492503	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L005_ses-wave1_con_0001.nii \
 05	male	fear	-1.04840474572613	1.09915251086108	-2.54780068587106	6.49128833492503	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L005_ses-wave1_con_0002.nii \
 05	male	sad	-1.04840474572613	1.09915251086108	-2.54780068587106	6.49128833492503	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L005_ses-wave1_con_0003.nii \

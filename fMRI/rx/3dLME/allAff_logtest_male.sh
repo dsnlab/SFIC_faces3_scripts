@@ -11,7 +11,7 @@
 
 module load prl afni
 
-cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/allAff_test_male/
+cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/allAff_logtest_male/
 
 3dLME -prefix allAff_logtest_male \
 -jobs 8 \
@@ -20,7 +20,7 @@ cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/allAff_test_male/
 -SS_type 3 \
 -qVars "logtest_c,logtest_c2" \
 -qVarCenters "0,0" \
--resid	allAff_test_male_residuals	\
+-resid	allAff_logtest_male_residuals	\
 -dataTable \
 Subj	gender	logtest_c	logtest_c2	age_c	age_c2	InputFile \
 05	male	-1.04840474572613	1.09915251086108	-2.54780068587106	6.49128833492503	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L005_ses-wave1_con_0006.nii \
