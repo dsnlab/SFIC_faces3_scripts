@@ -20,7 +20,7 @@ cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/eachAff_test_female/
 -SS_type 3 \
 -qVars "test_c,test_c2" \
 -qVarCenters "0,0" \
--resid	each_residuals	\
+-resid	eachAff_test_female_residuals	\
 -num_glt 10 \
 -gltLabel 1 'angry_test' -gltCode  1 'affect : 1*angry test_c : ' \
 -gltLabel 2 'angry_test_sq' -gltCode  2 'affect : 1*angry test_c2 : ' \

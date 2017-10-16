@@ -20,7 +20,7 @@ cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/allAff_pds_male/
 -SS_type 3 \
 -qVars "pdss_c,pdss_c2" \
 -qVarCenters "0,0" \
--resid	all_residuals	\
+-resid	allAff_pds_male_residuals	\
 -dataTable \
 Subj	gender	pdss_c	pdss_c2	age_c	age_c2	InputFile \
 05	male	-0.189873417721519	0.0360519147572505	-2.42042855133615	5.85847437212319	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L005_ses-wave1_con_0006.nii \

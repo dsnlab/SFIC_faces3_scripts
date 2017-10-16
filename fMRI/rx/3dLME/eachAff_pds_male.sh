@@ -20,7 +20,7 @@ cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/eachAff_pds_male/
 -SS_type 3 \
 -qVars "pdss_c,pdss_c2" \
 -qVarCenters "0,0" \
--resid	each_residuals	\
+-resid	eachAff_pds_male_residuals	\
 -num_glt 10 \
 -gltLabel 1 'angry_pds' -gltCode  1 'affect : 1*angry pdss_c : ' \
 -gltLabel 2 'angry_pds_sq' -gltCode  2 'affect : 1*angry pdss_c2 : ' \

@@ -20,7 +20,7 @@ cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/allAff_age/
 -SS_type 3 \
 -qVars "age_c,age_c2" \
 -qVarCenters "0,0" \
--resid	all_residuals	\
+-resid	allAll_age_residuals \
 -num_glt 4 \
 -gltLabel 1 'age.male' -gltCode  1 'gender : 1*male age_c : ' \
 -gltLabel 2 'age.female' -gltCode  2 'gender : 1*female age_c : ' \

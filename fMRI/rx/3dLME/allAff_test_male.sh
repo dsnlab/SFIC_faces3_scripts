@@ -20,7 +20,7 @@ cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/allAff_test_male/
 -SS_type 3 \
 -qVars "test_c,test_c2" \
 -qVarCenters "0,0" \
--resid	all_residuals	\
+-resid	allAff_test_male_residuals	\
 -dataTable \
 Subj	gender	test_c	test_c2	age_c	age_c2	InputFile \
 05	male	-50.5902111111111	2559.36946026679	-2.54780068587106	6.49128833492503	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L005_ses-wave1_con_0006.nii \

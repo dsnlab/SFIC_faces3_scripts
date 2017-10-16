@@ -20,7 +20,7 @@ cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/eachAff_age/
 -SS_type 3 \
 -qVars "age_c,age_c2" \
 -qVarCenters "0,0" \
--resid	each_residuals	\
+-resid	eachAff_age_residuals	\
 -num_glt 30 \
 -gltLabel 1 'angry_age' -gltCode  1 'affect : 1*angry age_c : ' \
 -gltLabel 2 'angry_age_sq' -gltCode  2 'affect : 1*angry age_c2 : ' \
