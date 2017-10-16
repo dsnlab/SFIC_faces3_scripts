@@ -1,9 +1,9 @@
 #!/bin/bash
 #--------------------------------------------------------------
 #
-#SBATCH --job-name=allAff_logtest_female
-#SBATCH --output=output/allAff_logtest_female.log
-#SBATCH --error=output/allAff_logtest_female_error.log
+#SBATCH --job-name=allAff_logtest_age_female
+#SBATCH --output=output/allAff_logtest_age_female.log
+#SBATCH --error=output/allAff_logtest_age_female_error.log
 #SBATCH --cpus-per-task=25
 #SBATCH --ntasks=1
 #SBATCH --mem-per-cpu=4000
@@ -13,14 +13,14 @@ module load prl afni
 
 cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/allAff_logtest_female/
 
-3dLME -prefix allAff_logtest_female \
+3dLME -prefix allAff_logtest_age_female \
 -jobs 8 \
--model  "logtest_c+logtest_c2" \
+-model  "logtest_c+logtest_c2+age_c" \
 -ranEff "~1" \
 -SS_type 3 \
--qVars "logtest_c,logtest_c2" \
--qVarCenters "0,0" \
--resid	allAff_logtest_female_residuals	\
+-qVars "logtest_c,logtest_c2,age_c" \
+-qVarCenters "0,0,0" \
+-resid	allAff_logtest_age_female_residuals	\
 -dataTable \
 Subj	gender	logtest_c	logtest_c2	age_c	age_c2	InputFile \
 01	female	-0.540324263638051	0.291950309876002	-2.0434134057971	4.1755383469913	/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/sub-L001_ses-wave1_con_0006.nii \
