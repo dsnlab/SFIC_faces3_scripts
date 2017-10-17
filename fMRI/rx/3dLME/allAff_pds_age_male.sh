@@ -15,7 +15,7 @@ cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/allAff_pds_male/
 
 3dLME -prefix allAff_pds_age_male \
 -jobs 8 \
--model  "pdss_c+pdss_c2+age_C" \
+-model  "pdss_c+pdss_c2+age_c" \
 -ranEff "~1" \
 -SS_type 3 \
 -qVars "pdss_c,pdss_c2,age_c" \
