@@ -25,7 +25,9 @@ for sub in ${subjects[@]}; do
 	for wave in ${waves[@]}; do 
 		for con in ${fx_cons[@]}; do 
 			for num in {1..20}; do 
+				if -a sub-L0${sub}_ses-${wave}_${con}.nii; then
 					echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/$rx_model/Clust_mask+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${rx_model}.txt
+				fi
 			done
 		done
 	done
