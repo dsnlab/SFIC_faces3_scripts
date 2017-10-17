@@ -216,7 +216,7 @@ write.table(pds_eachAff_male, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_script
 
 ## create testosterone files
 ```{r}
-# load age
+# load test
 test_covariate = read.csv("/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/testosterone.csv")
 
 test_covariate_female <- test_covariate %>%
@@ -230,7 +230,7 @@ test_covariate %>%
   head(6) %>%
   kable(format = 'pandoc')
 
-# center age and create quadratic term for age
+# center test and create quadratic term for test
 test_covariate = test_covariate %>%
   mutate(test_c = testMean-(mean(testMean)),
          test_c2 = test_c^2,
@@ -242,7 +242,7 @@ test_covariate = test_covariate %>%
 
 test_allAff = left_join(test_covariate, fxCons_allAff, by = c("subid", "wave")) %>%
   mutate(Subj = subid) %>%
-  select(Subj, gender, contains("age_c"), InputFile) %>%
+  select(Subj, gender, contains("_c"), InputFile) %>%
   mutate(Subj = sprintf("%02d", Subj)) %>%
   arrange(Subj)
   
@@ -254,7 +254,7 @@ write.table(test_allAff, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMR
 
 test_eachAff = left_join(test_covariate, fxCons_eachAff, by = c("subid", "wave")) %>%
   mutate(Subj = subid) %>%
-  select(Subj, gender, affect, contains("age_c"), InputFile) %>%
+  select(Subj, gender, affect, contains("_c"), InputFile) %>%
   mutate(Subj = sprintf("%02d", Subj)) %>%
   arrange(Subj)
   
@@ -333,3 +333,121 @@ test_eachAff_male %>%
 write.table(test_eachAff_male, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/testosterone_eachAff_male.txt', sep = "\t", quote=FALSE, row.names = FALSE)
 ```
 
+## create log testosterone files
+```{r}
+# load log test
+test_covariate = read.csv("/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/log_testosterone.csv")
+
+test_covariate_female <- test_covariate %>%
+  filter(gender == "female")
+
+test_covariate_male <- test_covariate %>%
+  filter(gender == "male")
+
+# print header
+test_covariate %>%
+  head(6) %>%
+  kable(format = 'pandoc')
+
+# center log test and create quadratic term for log test
+test_covariate = test_covariate %>%
+  mutate(test_c = l_testMean-(mean(l_testMean)),
+         test_c2 = test_c^2,
+         age_c = age-(mean(age)),
+         age_c2 = age_c^2,
+         subid = as.integer(subid),
+         wave = as.factor(wave)) %>%
+  select(subid, wave, gender, contains("_c"))
+
+test_allAff = left_join(test_covariate, fxCons_allAff, by = c("subid", "wave")) %>%
+  mutate(Subj = subid) %>%
+  select(Subj, gender, contains("_c"), InputFile) %>%
+  mutate(Subj = sprintf("%02d", Subj)) %>%
+  arrange(Subj)
+  
+test_allAff %>%
+  head(10) %>%
+  kable(format = 'pandoc')
+
+write.table(test_allAff, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/log_testosterone_allAff.txt', sep = "\t", quote=FALSE, row.names = FALSE)
+
+test_eachAff = left_join(test_covariate, fxCons_eachAff, by = c("subid", "wave")) %>%
+  mutate(Subj = subid) %>%
+  select(Subj, gender, affect, contains("_c"), InputFile) %>%
+  mutate(Subj = sprintf("%02d", Subj)) %>%
+  arrange(Subj)
+  
+test_eachAff %>%
+  head(10) %>%
+  kable(format = 'pandoc')
+
+write.table(test_eachAff, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/log_testosterone_eachAff.txt', sep = "\t", quote=FALSE, row.names = FALSE)
+
+# create as above for females
+test_covariate_female = test_covariate_female %>%
+  mutate(test_c = l_testMean-(mean(l_testMean)),
+         test_c2 = test_c^2,
+         age_c = age-(mean(age)),
+         age_c2 = age_c^2,
+         subid = as.integer(subid),
+         wave = as.factor(wave)) %>%
+  select(subid, wave, gender, contains("_c"))
+
+test_allAff_female = left_join(test_covariate_female, fxCons_allAff, by = c("subid", "wave")) %>%
+  mutate(Subj = subid) %>%
+  select(Subj, gender, contains("_c"), InputFile) %>%
+  mutate(Subj = sprintf("%02d", Subj)) %>%
+  arrange(Subj)
+  
+test_allAff_female %>%
+  head(10) %>%
+  kable(format = 'pandoc')
+
+write.table(test_allAff_female, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/log_testosterone_allAff_female.txt', sep = "\t", quote=FALSE, row.names = FALSE)
+
+test_eachAff_female = left_join(test_covariate_female, fxCons_eachAff, by = c("subid", "wave")) %>%
+  mutate(Subj = subid) %>%
+  select(Subj, gender, affect, contains("_c"), InputFile) %>%
+  mutate(Subj = sprintf("%02d", Subj)) %>%
+  arrange(Subj)
+  
+test_eachAff_female %>%
+  head(10) %>%
+  kable(format = 'pandoc')
+
+write.table(test_eachAff_female, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/log_testosterone_eachAff_female.txt', sep = "\t", quote=FALSE, row.names = FALSE)
+
+# create as above for males
+test_covariate_male = test_covariate_male %>%
+  mutate(test_c = l_testMean-(mean(l_testMean)),
+         test_c2 = test_c^2,
+         age_c = age-(mean(age)),
+         age_c2 = age_c^2,
+         subid = as.integer(subid),
+         wave = as.factor(wave)) %>%
+  select(subid, wave, gender, contains("_c"))
+
+test_allAff_male = left_join(test_covariate_male, fxCons_allAff, by = c("subid", "wave")) %>%
+  mutate(Subj = subid) %>%
+  select(Subj, gender, contains("_c"), InputFile) %>%
+  mutate(Subj = sprintf("%02d", Subj)) %>%
+  arrange(Subj)
+  
+test_allAff_male %>%
+  head(10) %>%
+  kable(format = 'pandoc')
+
+write.table(test_allAff_male, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/log_testosterone_allAff_male.txt', sep = "\t", quote=FALSE, row.names = FALSE)
+
+test_eachAff_male = left_join(test_covariate_male, fxCons_eachAff, by = c("subid", "wave")) %>%
+  mutate(Subj = subid) %>%
+  select(Subj, gender, affect, contains("_c"), InputFile) %>%
+  mutate(Subj = sprintf("%02d", Subj)) %>%
+  arrange(Subj)
+  
+test_eachAff_male %>%
+  head(10) %>%
+  kable(format = 'pandoc')
+
+write.table(test_eachAff_male, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/log_testosterone_eachAff_male.txt', sep = "\t", quote=FALSE, row.names = FALSE)
+```
