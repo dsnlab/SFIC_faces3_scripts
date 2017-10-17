@@ -14,7 +14,7 @@ models=(allAff_age allAff_pds_female allAff_pds_male allAff_logtest_female allAf
 # Estimate acf parameters for AFNI 3dLME models and save this output
 # ------------------------------------------------------------------------------------------
 cd "${rxDir}"
- model in "${models[@]}"; do
+for model in "${models[@]}"; do
 	cd $model
 	3dFWHMx -acf -mask "${model}"+tlrc[0] "${model}"_residuals+tlrc > "${model}"_acf.txt
 	cd ../
@@ -23,9 +23,9 @@ done
 extramodels=(allAff_pds_age_female allAff_pds_age_male allAff_logtest_age_female allAff_logtest_age_male eachAff_pds_age_female eachAff_pds_age_male eachAff_logtest_age_female eachAff_logtest_age_male)
 
 cd "${rxDir}"
- model in "${models[@]}"; do
+for model in "${models[@]}"; do
  	cd $model
- 	extramodel in "${extramodels[@]}"; do
+ 	for extramodel in "${extramodels[@]}"; do
  		if [ -a "${extramodel}"+tlrc.BRIK ]; then
 		3dFWHMx -acf -mask "${extramodel}"+tlrc[0] "${extramodel}"_residuals+tlrc > "${extramodel}"_acf.txt
 		fi
