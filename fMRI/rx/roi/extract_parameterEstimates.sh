@@ -32,3 +32,22 @@ for sub in ${subjects[@]}; do
 		done
 	done
 done
+
+# Extract mean parameter estimates and SDs for anatomical ROIs for each subject, wave, contrast
+# ---------------------------------------------------------------------------------------------
+
+rois=(lAmyg, rAmyg, lAcc, rAcc, lHippo, rHippo)
+
+cd $con_dir
+
+for roi in ${rois[@]}; do 
+	for sub in ${subjects[@]}; do 
+		for wave in ${waves[@]}; do 
+			for con in ${fx_cons[@]}; do 
+				if [ -a sub-L0${sub}_ses-${wave}_${con}.nii ]; then
+					echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange 1 1 -mask $output_dir/${roi}_75.nii $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${roi}_${rx_model}.txt
+				fi
+			done
+		done
+	done
+done
