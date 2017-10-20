@@ -11,7 +11,7 @@
 
 module load prl afni
 
-cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff_test/
+cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff_logtest/
 
 3dLME -prefix eachAff_test \
 -jobs 8 \
