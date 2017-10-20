@@ -1,9 +1,9 @@
 #!/bin/bash
 #--------------------------------------------------------------
 #
-#SBATCH --job-name=eachAff_pds_masked
-#SBATCH --output=output/eachAff_pds_masked.log
-#SBATCH --error=output/eachAff_pds_masked_error.log
+#SBATCH --job-name=eachAff_pds_age_masked
+#SBATCH --output=output/eachAff_pds_age_masked.log
+#SBATCH --error=output/eachAff_pds_age_masked_error.log
 #SBATCH --cpus-per-task=25
 #SBATCH --ntasks=1
 #SBATCH --mem-per-cpu=4000
@@ -13,13 +13,13 @@ module load prl afni
 
 cd /projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff_pds/
 
-3dLME -prefix eachAff_pds \
+3dLME -prefix eachAff_pds_age \
 -jobs 8 \
--model  "pdss_c*gender*affect+pdss_c2*gender*affect" \
+-model  "pdss_c*gender*affect+pdss_c2*gender*affect+age_c" \
 -ranEff "~1" \
 -SS_type 3 \
--qVars "pdss_c,pdss_c2" \
--qVarCenters "0,0" \
+-qVars "pdss_c,pdss_c2,age_c" \
+-qVarCenters "0,0,0" \
 -resid	eachAff_pds_age_residuals	\
 -num_glt 30 \
 -gltLabel 1 'angry_pds' -gltCode  1 'affect : 1*angry pdss_c : ' \
