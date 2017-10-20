@@ -8,29 +8,35 @@ module load prl afni
 # ------------------------------------------------------------------------------------------
 
 # RX directories (where model masks can be found)
-afniDir=/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI
+afniDir=/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked
 
 # Output directory to store thresholding info
-outputDir=/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/thresholding
+outputDir=/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/thresholding
 
 # Run 3dClustSim
 # ------------------------------------------------------------------------------------------
 
-3dClustSim -mask "${afniDir}"/allAff_pds/allAff_pds+tlrc[0] -acf 0.517748  5.00012  12.0729 > "${outputDir}"/allAff_pds.txt
+3dClustSim -mask "${afniDir}"/eachAff_age/eachAff_age+tlrc[0] -acf 0.493776  4.85784  12.133 > "${outputDir}"/eachAff_age.txt
 
-3dClustSim -mask "${afniDir}"/allAff_pds/allAff_pds_age+tlrc[0] -acf 0.519856  4.99611  12.109 > "${outputDir}"/allAff_pds_age.txt
+3dClustSim -mask "${afniDir}"/eachAff_pds/eachAff_pds+tlrc[0] -acf 0.501962  4.84341  12.3076 > "${outputDir}"/eachAff_pds.txt
 
-3dClustSim -mask "${afniDir}"/allAff_logtest/allAff_logtest+tlrc[0] -acf 0.511793  5.01331  11.9206 > "${outputDir}"/allAff_logtest.txt
+3dClustSim -mask "${afniDir}"/eachAff_logtest/eachAff_logtest+tlrc[0] -acf 0.496169  4.83218  12.2553 > "${outputDir}"/eachAff_logtest.txt
 
-3dClustSim -mask "${afniDir}"/allAff_logtest/allAff_logtest_age+tlrc[0] -acf 0.511296  5.01407  11.9241 > "${outputDir}"/allAff_logtest_age.txt
+#3dClustSim -mask "${afniDir}"/allAff_pds/allAff_pds+tlrc[0] -acf 0.517748  5.00012  12.0729 > "${outputDir}"/allAff_pds.txt
 
-3dClustSim -mask "${afniDir}"/eachAff_pds/eachAff_pds+tlrc[0] -acf 0.516609  4.89175  12.0033 > "${outputDir}"/eachAff_pds.txt
+#3dClustSim -mask "${afniDir}"/allAff_pds/allAff_pds_age+tlrc[0] -acf 0.519856  4.99611  12.109 > "${outputDir}"/allAff_pds_age.txt
 
-3dClustSim -mask "${afniDir}"/eachAff_pds/eachAff_pds_age+tlrc[0] -acf 0.518327  4.893  12.0326 > "${outputDir}"/eachAff_pds_age.txt
+#3dClustSim -mask "${afniDir}"/allAff_logtest/allAff_logtest+tlrc[0] -acf 0.511793  5.01331  11.9206 > "${outputDir}"/allAff_logtest.txt
 
-3dClustSim -mask "${afniDir}"/eachAff_logtest/eachAff_logtest+tlrc[0] -acf 0.513394  4.88828  11.9694 > "${outputDir}"/eachAff_logtest.txt
+#3dClustSim -mask "${afniDir}"/allAff_logtest/allAff_logtest_age+tlrc[0] -acf 0.511296  5.01407  11.9241 > "${outputDir}"/allAff_logtest_age.txt
 
-3dClustSim -mask "${afniDir}"/eachAff_logtest/eachAff_logtest_age+tlrc[0] -acf 0.51372  4.88934  11.9803 > "${outputDir}"/eachAff_logtest_age.txt
+#3dClustSim -mask "${afniDir}"/eachAff_pds/eachAff_pds+tlrc[0] -acf 0.516609  4.89175  12.0033 > "${outputDir}"/eachAff_pds.txt
+
+#3dClustSim -mask "${afniDir}"/eachAff_pds/eachAff_pds_age+tlrc[0] -acf 0.518327  4.893  12.0326 > "${outputDir}"/eachAff_pds_age.txt
+
+#3dClustSim -mask "${afniDir}"/eachAff_logtest/eachAff_logtest+tlrc[0] -acf 0.513394  4.88828  11.9694 > "${outputDir}"/eachAff_logtest.txt
+
+#3dClustSim -mask "${afniDir}"/eachAff_logtest/eachAff_logtest_age+tlrc[0] -acf 0.51372  4.88934  11.9803 > "${outputDir}"/eachAff_logtest_age.txt
 
 #3dClustSim -mask "${afniDir}"/allAff_age/allAff_age+tlrc[0] -acf 0.513196  5.01536  11.8679 > "${outputDir}"/allAff_age.txt
 
