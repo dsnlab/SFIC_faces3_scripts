@@ -1,0 +1,4 @@
+Group grey mask was created with following steps: 
+1. canonical white and ventricle masks were downloaded from canlabcor github, added together and binarized (using fslmaths) to create canonical_wm_vent_bin.nii
+2. canonical_wm_vent_bin.nii was subtracted from groupAverage_opt.nii (using spm: group_Grey.mat)
+3. this produced image with 0s and 1s, but also -1 in cerebellum (areas that were present in wm_vent mask, but not groupAverage mask. this image was thresholded (using fslmaths) so what anything >0 was 1, and everything else was 0. this created groupGrey.nii
