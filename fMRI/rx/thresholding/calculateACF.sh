@@ -6,11 +6,10 @@
 module load prl afni
 
 # RX directories (where the residual files are)
-rxDir=/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/
+rxDir=/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/
 
 # AFNI 3dLME model names
-models=(eachAff_logtest)
-#models=(allAff_pds allAff_logtest eachAff_pds eachAff_logtest)
+models=(eachAff_age eachAff_pds eachAff_logtest)
 
 # Estimate acf parameters for AFNI 3dLME models and save this output
 # ------------------------------------------------------------------------------------------
@@ -21,19 +20,18 @@ for model in "${models[@]}"; do
 	cd ../
 done
 
-extramodels=(eachAff_logtest_age)
 #extramodels=(allAff_pds_age allAff_logtest_age eachAff_pds_age eachAff_logtest)
 
-cd "${rxDir}"
-for model in "${models[@]}"; do
- 	cd $model
- 	for extramodel in "${extramodels[@]}"; do
- 		if [ -a "${extramodel}"+tlrc.BRIK ]; then
-		3dFWHMx -acf -mask "${extramodel}"+tlrc[0] "${extramodel}"_residuals+tlrc > "${extramodel}"_acf.txt
-		fi
-	done
-	cd ../
-done
+#cd "${rxDir}"
+#for model in "${models[@]}"; do
+# 	cd $model
+# 	for extramodel in "${extramodels[@]}"; do
+# 		if [ -a "${extramodel}"+tlrc.BRIK ]; then
+#		3dFWHMx -acf -mask "${extramodel}"+tlrc[0] "${extramodel}"_residuals+tlrc > "${extramodel}"_acf.txt
+#		fi
+#	done
+#	cd ../
+#done
 
 
 # AFNI 3dLME model names
