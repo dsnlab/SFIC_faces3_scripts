@@ -7,9 +7,9 @@
 #set paths
 projectdir="/projects/dsnlab/SFIC_Faces3"
 fxmodelsdir="fMRI/analysis/fx/models"
-AFNIfxdir="fMRI/analysis/rx/AFNI/FX_models"
+AFNIfxdir="fMRI/analysis/rx/AFNI_masked/FX_models"
 
-model="all_emotions"
+model="all_emotions_masked"
 
 cd "$projectdir"/"$fxmodelsdir"/"$model"
 
