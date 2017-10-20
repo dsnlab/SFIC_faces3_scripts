@@ -7,8 +7,8 @@
 # Set paths and variables
 # ------------------------------------------------------------------------------------------
 # paths
-rx_dir='/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI' #RX output directory
-con_dir='/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models' #fx contrast directory
+rx_dir='/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked' #RX output directory
+con_dir='/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/FX_models' #fx contrast directory
 output_dir='/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/roi' #roi output directory
 
 # variables
