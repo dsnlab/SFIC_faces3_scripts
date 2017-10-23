@@ -1,8 +1,19 @@
 #!/bin/bash
+#--------------------------------------------------------------
+#
+#SBATCH --job-name=extractParams
+#SBATCH --output=output/extractParams.log
+#SBATCH --error=output/extractParams_error.log
+#SBATCH --cpus-per-task=25
+#SBATCH --ntasks=1
+#SBATCH --mem-per-cpu=4000
+#SBATCH --partition=fat,short
 
 # This script extracts mean parameter estimates and SDs within an ROI or parcel
 # from subject FX condition contrasts (condition > rest) for each wave. Output is 
 # saved as a text file in the output directory.
+
+module load prl afni
 
 # Set paths and variables
 # ------------------------------------------------------------------------------------------
@@ -17,7 +28,7 @@ waves=(wave1 wave2 wave3) #waves or task names
 fx_cons=(con_0001 con_0002 con_0003 con_0004 con_0005) #fx con files to extract from
 rx_models=(age pds logtest)
 extra_models=(pds_age logtest_age)
-rois=(lAmyg, rAmyg, lAcc, rAcc, lHippo, rHippo)
+rois=(lAmyg rAmyg lAcc rAcc lHippo rHippo)
 
 # Extract mean parameter estimates and SDs for functional clusters for each subject, wave, contrast
 # -------------------------------------------------------------------------------------------------
@@ -27,43 +38,47 @@ rois=(lAmyg, rAmyg, lAcc, rAcc, lHippo, rHippo)
 
 cd $con_dir
 
-for rx_model in ${rx_models[@]}; do
-	for sub in ${subjects[@]}; do 
-		for wave in ${waves[@]}; do 
-			for con in ${fx_cons[@]}; do 
-				for num in {1..20}; do 
-					if [ -a sub-L0${sub}_ses-${wave}_${con}.nii ]; then
-						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/Clust_mask_${rx_model}+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${rx_model}.txt
-						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/Clust_mask_${rx_model}_2+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${rx_model}2.txt
-						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/Clust_mask_${rx_model}_Gender+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${rx_model}Gender.txt
-						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/Clust_mask_${rx_model}_2Gender+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${rx_model}2Gender.txt	 
-					fi
-				done
-			done
-		done
-	done
-done
+#for rx_model in ${rx_models[@]}; do
+#	for sub in ${subjects[@]}; do 
+#		for wave in ${waves[@]}; do 
+#			for con in ${fx_cons[@]}; do 
+#				for num in {1..30}; do 
+#					if [ -a sub-L0${sub}_ses-${wave}_${con}.nii ]; then
+#						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${rx_model}_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${rx_model}.txt
+#						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${rx_model}2_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${rx_model}2.txt
+#						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/gender_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_gender_from_${rx_model}.txt
+#						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${rx_model}.gender_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${rx_model}.gender.txt	 
+#					fi
+#				done
+#			done
+#		done
+#	done
+#done
 
-for rx_model in ${rx_models[@]}; do
-	for extramodel in "${extramodels[@]}"; do
- 		if [ -a $rx_dir/eachAff_${rx_model}/eachAff_${extramodel}+tlrc.BRIK ]; then
-			for sub in ${subjects[@]}; do 
-				for wave in ${waves[@]}; do 
-					for con in ${fx_cons[@]}; do 
-						for num in {1..20}; do 
-							if [ -a sub-L0${sub}_ses-${wave}_${con}.nii ]; then
-								echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/Clust_mask_${extra_model}+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${extra_model}.txt
-								echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/Clust_mask_${extra_model}_2+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${extra_model}_2.txt
-								echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/Clust_mask_${extra_model}_Gender+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${extra_model}_Gender.txt
-								echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/Clust_mask_${extra_model}_2Gender+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${extra_model}_2Gender.txt	 
-							fi
-						done
-					done
-				done
-			done
-		done
-	done
-done
+#for rx_model in ${rx_models[@]}; do
+#	for extra_model in "${extra_models[@]}"; do
+# 		if [ -a $rx_dir/eachAff_${rx_model}/eachAff_${extra_model}+tlrc.BRIK ]; then
+#			for sub in ${subjects[@]}; do 
+#				echo $sub
+#				for wave in ${waves[@]}; do 
+#					echo $wave
+#					for con in ${fx_cons[@]}; do 
+#						echo $con	
+#						for num in {1..30}; do 
+#							echo $num
+#							if [ -a sub-L0${sub}_ses-${wave}_${con}.nii ]; then
+#								echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${extra_model}_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${extra_model}.txt
+#								echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${rx_model}2_age_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${rx_model}2_age.txt
+#								echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/gender_age_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_gender_from_${extra_model}.txt
+#								echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${rx_model}.gender_age_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${rx_model}.gender_age.txt	 
+#							fi
+#						done
+#					done
+#				done
+#			done
+#		fi
+#	done
+#done
 
 
 # Extract mean parameter estimates and SDs for anatomical ROIs for each subject, wave, contrast
@@ -76,7 +91,7 @@ for roi in ${rois[@]}; do
 		for wave in ${waves[@]}; do 
 			for con in ${fx_cons[@]}; do 
 				if [ -a sub-L0${sub}_ses-${wave}_${con}.nii ]; then
-					echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange 1 1 -mask $output_dir/${roi}_75.nii $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${roi}_${rx_model}.txt
+					echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange 1 1 -mask $output_dir/${roi}_75_resamp.nii $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${roi}_${rx_model}.txt
 				fi
 			done
 		done

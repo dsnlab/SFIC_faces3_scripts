@@ -16,11 +16,15 @@ outputDir=/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/thresholding
 # Run 3dClustSim
 # ------------------------------------------------------------------------------------------
 
-3dClustSim -mask "${afniDir}"/eachAff_age/eachAff_age+tlrc[0] -acf 0.493776  4.85784  12.133 > "${outputDir}"/eachAff_age.txt
+3dClustSim -mask "${afniDir}"/eachAff_age/eachAff_age+tlrc[0] -acf 0.49382  4.85781  12.1338 > "${outputDir}"/eachAff_age.txt
 
-3dClustSim -mask "${afniDir}"/eachAff_pds/eachAff_pds+tlrc[0] -acf 0.501962  4.84341  12.3076 > "${outputDir}"/eachAff_pds.txt
+3dClustSim -mask "${afniDir}"/eachAff_pds/eachAff_pds+tlrc[0] -acf 0.501962  4.8434  12.3076 > "${outputDir}"/eachAff_pds.txt
 
-3dClustSim -mask "${afniDir}"/eachAff_logtest/eachAff_logtest+tlrc[0] -acf 0.496169  4.83218  12.2553 > "${outputDir}"/eachAff_logtest.txt
+3dClustSim -mask "${afniDir}"/eachAff_logtest/eachAff_logtest+tlrc[0] -acf 0.496159  4.83218  12.2551 > "${outputDir}"/eachAff_logtest.txt
+
+3dClustSim -mask "${afniDir}"/eachAff_pds/eachAff_pds_age+tlrc[0] -acf 0.502085  4.84213  12.317 > "${outputDir}"/eachAff_pds_age.txt
+
+3dClustSim -mask "${afniDir}"/eachAff_logtest/eachAff_logtest_age+tlrc[0] -acf 0.496942  4.83349  12.2698 > "${outputDir}"/eachAff_logtest_age.txt
 
 #3dClustSim -mask "${afniDir}"/allAff_pds/allAff_pds+tlrc[0] -acf 0.517748  5.00012  12.0729 > "${outputDir}"/allAff_pds.txt
 
