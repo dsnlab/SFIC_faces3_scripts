@@ -44,11 +44,12 @@ for rx_model in ${rx_models[@]}; do
 			for con in ${fx_cons[@]}; do 
 				for num in {1..30}; do 
 					if [ -a sub-L0${sub}_ses-${wave}_${con}.nii ]; then
-						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${rx_model}_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${rx_model}.txt
-						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${rx_model}2_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${rx_model}2.txt
-						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/gender_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_gender_from_${rx_model}.txt
-						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${rx_model}.gender_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${rx_model}.gender.txt	 
-					
+						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${rx_model}_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/functional_clusters/paramEstimates_${rx_model}.txt
+						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${rx_model}2_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/functional_clusters/paramEstimates_${rx_model}2.txt
+						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/gender_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/functional_clusters/paramEstimates_gender_from_${rx_model}.txt
+						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${rx_model}.gender_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/functional_clusters/paramEstimates_${rx_model}.gender.txt	 
+						echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${rx_model}2.gender_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/functional_clusters/paramEstimates_${rx_model}2.gender.txt	 
+						
 						for extra_model in "${extra_models[@]}"; do
 							if [ -a $rx_dir/eachAff_${rx_model}/eachAff_${extra_model}+tlrc.BRIK ]; then
 								echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange $num $num -mask $rx_dir/eachAff_${rx_model}/${extra_model}_clust+tlrc $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${extra_model}.txt
@@ -67,16 +68,16 @@ done
 # Extract mean parameter estimates and SDs for anatomical ROIs for each subject, wave, contrast
 # ---------------------------------------------------------------------------------------------
 
-cd $con_dir
-
-for roi in ${rois[@]}; do 
-	for sub in ${subjects[@]}; do 
-		for wave in ${waves[@]}; do 
-			for con in ${fx_cons[@]}; do 
-				if [ -a sub-L0${sub}_ses-${wave}_${con}.nii ]; then
-					echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange 1 1 -mask $output_dir/${roi}_75_resamp.nii $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${roi}_${rx_model}.txt
-				fi
-			done
-		done
-	done
-done
+#cd $con_dir
+#
+#for roi in ${rois[@]}; do 
+#	for sub in ${subjects[@]}; do 
+#		for wave in ${waves[@]}; do 
+#			for con in ${fx_cons[@]}; do 
+#				if [ -a sub-L0${sub}_ses-${wave}_${con}.nii ]; then
+#					echo ${sub} ${wave} ${con} ${num} `3dmaskave -sigma -quiet -mrange 1 1 -mask $output_dir/${roi}_75_resamp.nii $con_dir/sub-L0${sub}_ses-${wave}_${con}.nii` >> $output_dir/paramEstimates_${roi}_${rx_model}.txt
+#				fi
+#			done
+#		done
+#	done
+#done
