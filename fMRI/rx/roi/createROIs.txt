@@ -1,0 +1,4 @@
+1. ROIs (lAcc.nii) were created in FSL (fsleyes) using the Harvard-Oxford atlas.
+2. They were converted to binarized, thresholded maps using FSL: fslmaths lAcc.nii -thr 50 -bin lAcc_50.nii
+3. These  maps were then resampled to the same voxel size as the functional datausing AFNI: 3dresample -master /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/FX_models/sub-L001_ses-wave1_con_0001.nii -inset lAcc_50.nii -prefix lAcc_50_resamp.nii 
+
