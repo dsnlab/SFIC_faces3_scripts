@@ -15,59 +15,73 @@ library(knitr)
 ## load data
 ```{r}
 #set directory
-setwd('/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/analysis/rx/AFNI/FX_models')
+setwd('/Volumes/psych-cog/dsnlab/SFIC/nonbids_data/fMRI/analysis/rx/AFNI_masked/FX_models')
 
 # load csv file with fx con file names
 #fxCons = data.frame(file = list.files('./data/FX_models/')) # get file names from contrast .nii files
-fxCons = read.csv('fxCons.csv',header=F)
-fxCons <- setNames(fxCons, "file")
+fxCons<-as.data.frame(list.files()) %>% rename(file=`list.files()`)
   
 # print header
 fxCons %>%
   head(6) %>%
   kable(format = 'pandoc')
 
-# extract condition information from contrast files
-fxCons_allAff = fxCons %>%
-  filter(grepl("con_0006", file)) %>%
-  extract(file, c("subid","wave","con"), 
-          regex = "sub-L0([0-9]{2})_ses-wave([1-3]{1})_(con_[0-6]{4}).nii", 
-          remove = FALSE) %>%
-  mutate(InputFile = paste0('/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/',file," \\"), # CHANGE THIS PATH
-         subid = as.integer(subid),
-         wave = as.factor(wave))
-
-fxCons_eachAff = fxCons %>%
+fxCons = fxCons %>%
   extract(file, c("subid","wave","con"), 
           regex = "sub-L0([0-9]{2})_ses-wave([1-3]{1})_(con_[0-5]{4}).nii", 
           remove = FALSE) %>%
+  filter(!is.na(con)) %>%
   mutate(affect = ifelse(con %in% "con_0001", "angry",
                          ifelse(con %in% "con_0002", "fear",
                                ifelse(con %in% "con_0003", "sad",
                                       ifelse(con %in% "con_0004", "happy",
                                              ifelse(con %in% "con_0005", "neutral", NA))))),
-         InputFile = paste0('/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/',file," \\"), # CHANGE THIS PATH
+         InputFile = paste0('/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/FX_models/',file," \\"), # CHANGE THIS PATH
          subid = as.integer(subid),
          wave = as.factor(wave))
 ```
 
-## create age files
+## create covariate files
 ```{r}
 # load age
-age_covariate = read.csv("/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/age.csv")
+covariates = read.csv("/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/covariates.csv")
 
+covariates = covariates %>%
+  mutate(age_c = age-(mean(age)),
+         age_c_sq = age_c^2,
+         age_c_cu = age_c^3,
+         pds_c = pdss-(mean(pdss)),
+         pds_c_sq = pds_c^2,
+         pds_c_cu = pds_c^3,
+         logtest_c = l_testMean-(mean(l_testMean)),
+         logtest_c_sq = logtest_c^2,
+         logtest_c_cu = logtest_c^3,
+         subid = as.integer(subid),
+         wave = as.factor(wave)) %>%
+  select(subid, wave, gender, starts_with("age_c"), starts_with("pds_c"),starts_with("logtest_c"))
+
+covariates2 = left_join(covariates, fxCons, by = c("subid", "wave")) %>%
+  mutate(Subj = subid) %>%
+  select(Subj, gender, affect, contains("_c"), InputFile) %>%
+  mutate(Subj = sprintf("%02d", Subj)) %>%
+  arrange(Subj)
+
+covariates2[,4:12] <-round(covariates2[,4:12],4)
+
+write.table(covariates2, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/3dlme_covariates.txt', sep = "\t", quote=FALSE, row.names = FALSE)
+```
+
+
+#HAVE NOT FIXED FROM HERE ONWARDS - PROB NOT NECESSARY.
+
+```{r}
 # print header
 age_covariate %>%
   head(6) %>%
   kable(format = 'pandoc')
 
 # center age and create quadratic term for age
-age_covariate = age_covariate %>%
-  mutate(age_c = age-(mean(age)),
-         age_c2 = age_c^2,
-         subid = as.integer(subid),
-         wave = as.factor(wave)) %>%
-  select(subid, wave, gender, starts_with("age_c"))
+
 
 age_allAff = left_join(age_covariate, fxCons_allAff, by = c("subid", "wave")) %>%
   mutate(Subj = subid) %>%
@@ -451,3 +465,16 @@ test_eachAff_male %>%
 
 write.table(test_eachAff_male, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/log_testosterone_eachAff_male.txt', sep = "\t", quote=FALSE, row.names = FALSE)
 ```
+
+
+EXTRA:
+
+# extract condition information from contrast files
+fxCons_allAff = fxCons %>%
+  filter(grepl("con_0006", file)) %>%
+  extract(file, c("subid","wave","con"), 
+          regex = "sub-L0([0-9]{2})_ses-wave([1-3]{1})_(con_[0-6]{4}).nii", 
+          remove = FALSE) %>%
+  mutate(InputFile = paste0('/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI/FX_models/',file," \\"), # CHANGE THIS PATH
+         subid = as.integer(subid),
+         wave = as.factor(wave))
