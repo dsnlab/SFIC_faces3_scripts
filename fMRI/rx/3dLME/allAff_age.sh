@@ -15,7 +15,7 @@ cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff/age_c
 
 3dLME -prefix allAff_age_cub \
 -jobs 8 \
--model  "age_c+ gender+ affect+ age_c:gender+ age_c_sq:gender+ age_c_cu:gender+ age_c:affect+ age_c_sq:affect+ age_c_cu:affect+ age_c:affect:gender+ age_c_sq:affect:gender+ age_c_cu:affect:gender" \
+-model  "age_c+gender+affect+age_c:gender+age_c_sq:gender+age_c_cu:gender+age_c:affect+age_c_sq:affect+age_c_cu:affect+age_c:affect:gender+age_c_sq:affect:gender+age_c_cu:affect:gender" \
 -ranEff "~1+age_c" \
 -SS_type 3 \
 -qVars "age_c,age_c_sq,age_c_cu" \
