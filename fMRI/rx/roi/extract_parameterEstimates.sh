@@ -28,7 +28,8 @@ waves=(wave1 wave2 wave3) #waves or task names
 fx_cons=(con_0001 con_0002 con_0003 con_0004 con_0005) #fx con files to extract from
 rx_models=(pds logtest age)
 extra_models=(pds_age logtest_age)
-rois=(lAmyg rAmyg lAcc rAcc lHippo rHippo)
+#rois=(lAmyg rAmyg lAcc rAcc lHippo rHippo)
+rois=(lAmyg rAmyg)
 
 # Extract mean parameter estimates and SDs for functional clusters for each subject, wave, contrast
 # -------------------------------------------------------------------------------------------------
