@@ -13,14 +13,14 @@ module load prl afni
 
 cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff_age/
 
-3dLME -prefix eachAff_age \
+3dLME -prefix eachAff_age1 \
 -jobs 8 \
 -model  "age_c*gender*affect+age_c2*gender*affect" \
 -ranEff "~1" \
 -SS_type 3 \
 -qVars "age_c,age_c2" \
 -qVarCenters "0,0" \
--resid	eachAff_age_residuals	\
+-resid	eachAff_age_residuals1	\
 -num_glt 30 \
 -gltLabel 1 'angry_age' -gltCode  1 'affect : 1*angry age_c : ' \
 -gltLabel 2 'angry_age_sq' -gltCode  2 'affect : 1*angry age_c2 : ' \
