@@ -1,9 +1,9 @@
 #!/bin/bash
 #--------------------------------------------------------------
 #
-#SBATCH --job-name=allAff_age
-#SBATCH --output=output/allAff_age.log
-#SBATCH --error=output/allAff_age_error.log
+#SBATCH --job-name=allAff_age_sq
+#SBATCH --output=output/allAff_age_sq.log
+#SBATCH --error=output/allAff_age_sq_error.log
 #SBATCH --cpus-per-task=25
 #SBATCH --ntasks=1
 #SBATCH --mem-per-cpu=4000
@@ -13,16 +13,16 @@ module unload intel
 module load gcc/6.4 
 module load afni
 
-cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff/age/
+cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff/age_sq/
 
-3dLME -prefix allAff_age \
+3dLME -prefix allAff_age_sq \
 -jobs 8 \
--model  "age_c+gender+affect+age_c:gender+age_c:affect+gender:affect+age_c:affect:gender" \
+-model  "age_c+age_c_sq+gender+affect+age_c:gender+age_c_sq:gender+age_c:affect+age_c_sq:affect+gender:affect+age_c:affect:gender+age_c_sq:affect:gender" \
 -ranEff "~1+age_c" \
 -SS_type 3 \
--qVars "age_c" \
--qVarCenters "0" \
--resid	age_residuals \
+-qVars "age_c,age_c_sq" \
+-qVarCenters "0,0" \
+-resid	age_sq_residuals \
 -dataTable \
 Subj	gender	affect	age_c	age_c_sq	age_c_cu	pds_c	pds_c_sq	pds_c_cu	logtest_c	logtest_c_sq	logtest_c_cu	InputFile \
 01	2	angry	1.15543964334705	1.33504076941796	1.54255903047006	1.5679012345679	2.45831428135955	3.85439399669954	-1.1130632949435	1.23890989855049	-1.37898513381873	/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/FX_models/sub-L001_ses-wave2_con_0001.nii \
