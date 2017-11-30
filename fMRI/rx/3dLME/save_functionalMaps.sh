@@ -22,17 +22,16 @@
 # Set paths and variables
 # ------------------------------------------------------------------------------------------
 # paths
-#rx_dir='/projects/dsnlab/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked' #RX output directory
-rx_dir='/Volumes/StorEDGE/WORK/DSN/SFIC/'
+#rx_dir='/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff' #RX output directory
 
 # variables
-rx_models=(age pds logtest)
+rx_models=(age age_sq age_cub)
 f_threshs=(10.91 10.92 10.91)
 c_threshs=(29 25 29)
 
-extra_models=(pds_age logtest_age)
-extra_f_threshs=(10.92 10.91)
-extra_c_threshs=(29 26)
+#extra_models=(pds_age logtest_age)
+#extra_f_threshs=(10.92 10.91)
+#extra_c_threshs=(29 26)
 
 # sub-bricks for effects
 main=1
