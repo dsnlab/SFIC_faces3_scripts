@@ -1,4 +1,13 @@
 #!/bin/bash
+#--------------------------------------------------------------
+#
+#SBATCH --job-name=allAff_pds
+#SBATCH --output=output/allAff_pds.log
+#SBATCH --error=output/allAff_pds_error.log
+#SBATCH --cpus-per-task=25
+#SBATCH --ntasks=1
+#SBATCH --mem-per-cpu=4000
+#SBATCH --partition=fat,short
 
 # This script calculates the smoothness (acf parameters) of RX residual files
 # using 3dFWHMx in AFNI.
@@ -11,14 +20,14 @@ module load afni
 rxDir=/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff
 
 # AFNI 3dLME model names
-models=(age age_sq age_cub)
+models=(pds_cub)
 
 # Estimate acf parameters for AFNI 3dLME models and save this output
 # ------------------------------------------------------------------------------------------
 cd "${rxDir}"
 for model in "${models[@]}"; do
 	cd $model
-	3dFWHMx -acf -mask "${model}"+tlrc[0] "${model}"_residuals+tlrc > "${model}"_acf.txt
+	3dFWHMx -acf -mask allAff_"${model}"+tlrc[0] "${model}"_residuals+tlrc > "${model}"_acf.txt
 	cd ../
 done
 
