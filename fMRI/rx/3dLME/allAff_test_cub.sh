@@ -22,7 +22,7 @@ cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff/test_
 -SS_type 3 \
 -qVars "logtest_c,logtest_c_sq,logtest_c_cu" \
 -qVarCenters "0,0,0" \
--resid	logtest_cub_residuals \
+-resid	test_cub_residuals \
 -dataTable \
 Subj	gender	affect	age_c	age_c_sq	age_c_cu	pds_c	pds_c_sq	pds_c_cu	logtest_c	logtest_c_sq	logtest_c_cu	InputFile \
 01	2	angry	1.15543964334705	1.33504076941796	1.54255903047006	1.5679012345679	2.45831428135955	3.85439399669954	-1.1130632949435	1.23890989855049	-1.37898513381873	/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/FX_models/sub-L001_ses-wave2_con_0001.nii \

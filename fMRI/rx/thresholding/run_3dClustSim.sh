@@ -31,4 +31,4 @@ outputDir=/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/thres
 
 #3dClustSim -mask "${afniDir}"/age_sq/allAff_age_sq+tlrc[0] -acf 0.486456  4.7948  12.023 > "${outputDir}"/age_sq.txt
 
-3dClustSim -mask "${afniDir}"/pds_cub/allAff_pds_cub+tlrc[0] -acf 0.485853  4.79777  12.0741 > "${outputDir}"/pfd_cub.txt
+3dClustSim -mask "${afniDir}"/test_cub/allAff_test_cub+tlrc[0] -acf 0.479829  4.77772  11.9654 > "${outputDir}"/test_cub.txt
