@@ -41,11 +41,14 @@ fxCons = fxCons %>%
          wave = as.factor(wave))
 ```
 
-## create covariate files
+# import covariate files
 ```{r}
 # load age
 covariates = read.csv("/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/covariates.csv")
+```
 
+# create covariate file for both sexes
+```{r}
 covariates = covariates %>%
   mutate(age_c = age-(mean(age)),
          age_c_sq = age_c^2,
@@ -71,6 +74,61 @@ covariates2[,4:12] <-round(covariates2[,4:12],4)
 write.table(covariates2, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/3dlme_covariates.txt', sep = "\t", quote=FALSE, row.names = FALSE)
 ```
 
+# create covariate file for both females
+```{r}
+covariatesF = covariates %>%
+  filter(gender==2) %>% 
+  mutate(age_c = age-(mean(age)),
+         age_c_sq = age_c^2,
+         age_c_cu = age_c^3,
+         pds_c = pdss-(mean(pdss)),
+         pds_c_sq = pds_c^2,
+         pds_c_cu = pds_c^3,
+         logtest_c = l_testMean-(mean(l_testMean)),
+         logtest_c_sq = logtest_c^2,
+         logtest_c_cu = logtest_c^3,
+         subid = as.integer(subid),
+         wave = as.factor(wave)) %>%
+  select(subid, wave, gender, starts_with("age_c"), starts_with("pds_c"),starts_with("logtest_c"))
+
+covariates2_F = left_join(covariatesF, fxCons, by = c("subid", "wave")) %>%
+  mutate(Subj = subid) %>%
+  select(Subj, gender, affect, contains("_c"), InputFile) %>%
+  mutate(Subj = sprintf("%02d", Subj)) %>%
+  arrange(Subj)
+
+covariates2_F[,4:12] <-round(covariates2_F[,4:12],4)
+
+write.table(covariates2_F, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/3dlme_covariates_F.txt', sep = "\t", quote=FALSE, row.names = FALSE)
+```
+
+# create covariate file for both males
+```{r}
+covariatesM = covariates %>%
+  filter(gender==1) %>% 
+  mutate(age_c = age-(mean(age)),
+         age_c_sq = age_c^2,
+         age_c_cu = age_c^3,
+         pds_c = pdss-(mean(pdss)),
+         pds_c_sq = pds_c^2,
+         pds_c_cu = pds_c^3,
+         logtest_c = l_testMean-(mean(l_testMean)),
+         logtest_c_sq = logtest_c^2,
+         logtest_c_cu = logtest_c^3,
+         subid = as.integer(subid),
+         wave = as.factor(wave)) %>%
+  select(subid, wave, gender, starts_with("age_c"), starts_with("pds_c"),starts_with("logtest_c"))
+
+covariates2_M = left_join(covariatesM, fxCons, by = c("subid", "wave")) %>%
+  mutate(Subj = subid) %>%
+  select(Subj, gender, affect, contains("_c"), InputFile) %>%
+  mutate(Subj = sprintf("%02d", Subj)) %>%
+  arrange(Subj)
+
+covariates2_M[,4:12] <-round(covariates2_M[,4:12],4)
+
+write.table(covariates2_M, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/3dlme_covariates_M.txt', sep = "\t", quote=FALSE, row.names = FALSE)
+```
 
 #HAVE NOT FIXED FROM HERE ONWARDS - PROB NOT NECESSARY.
 

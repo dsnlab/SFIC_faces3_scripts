@@ -22,29 +22,39 @@
 # Set paths and variables
 # ------------------------------------------------------------------------------------------
 # paths
-#rx_dir='/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff' #RX output directory
+rx_dir='/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff' #RX output directory
 
 # variables
-rx_models=(age age_sq age_cub)
+rx_models=(age_cub, pds_cub, test_cub)
 f_threshs=(10.91 10.92 10.91)
-c_threshs=(29 25 29)
+c_threshs=(29 29 29)
 
 #extra_models=(pds_age logtest_age)
 #extra_f_threshs=(10.92 10.91)
 #extra_c_threshs=(29 26)
 
 # sub-bricks for effects
-main=1
-gender=2
-main2=4
-mainGender=5
-main2Gender=8
+dev=1
+dev2=2
+dev3=3
+gender=4
+affect=5
+dev_gender=6
+dev2_gender=7
+dev3_gender=8
+dev_affect=9
+dev2_affect=10
+dev3_affect=11
+gender_affect=12
+dev_gender_affect=13
+dev2_gender_affect=14
+dev3_gender_affect=15
 
-main_age=1
-gender_age=2
-main2_age=4
-mainGender_age=6
-main2Gender_age=9
+#main_age=1
+#gender_age=2
+#main2_age=4
+#mainGender_age=6
+#main2Gender_age=9
 
 # Save maps, masks, tables. Convert to niftis
 # -------------------------------------------------------------------------------------------------
@@ -58,9 +68,12 @@ array6=( "${extra_c_threshs[@]}" )
 
 cd $rx_dir
 for index in ${!array1[*]}; do 
-	cd eachAff_${array1[$index]}
+	cd allAff_${array1[$index]}
 	echo ${array1[$index]}, ${array3[$index]}, ${array2[$index]}
-	echo effects: ${array1[$index]} [$main], gender [$gender], ${array1[$index]}2 [$main2], ${array1[$index]}.gender [$mainGender], ${array1[$index]}2.gender [$main2Gender]
+	echo effects: dev [$dev], dev2 [$dev2], dev3 [$dev3], gender [$gender], affect $affect, 
+	dev_gender $dev_gender, dev2_gender $dev2_gender, dev3_gender $dev3_gender,
+	dev_affect $dev_affect, dev3_affect $dev3_affect, dev3_affect $dev3_affect, gender_affect $gender_affect,
+	dev_gender_affect $dev_gender_affect, dev2_gender_affect $dev2_gender_affect, dev3_gender_affect $dev3_gender_affect
 
   	3dmerge -dxyz=1 -1clust 1 ${array3[$index]} -1thresh ${array2[$index]} -1dindex $main -1tindex $main -prefix ${array1[$index]} eachAff_${array1[$index]}+tlrc
 	3dmerge -dxyz=1 -1clust 1 ${array3[$index]} -1thresh ${array2[$index]} -1dindex $gender -1tindex $gender -prefix gender eachAff_${array1[$index]}+tlrc
