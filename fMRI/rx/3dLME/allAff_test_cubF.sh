@@ -24,8 +24,7 @@ cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff/test_
 -qVarCenters "0,0,0" \
 -resid	test_cub_residuals \
 -dataTable \
-Subj	gender	affect	
-_c	age_c_sq	age_c_cu	pds_c	pds_c_sq	pds_c_cu	logtest_c	logtest_c_sq	logtest_c_cu	InputFile \
+Subj	gender	affect	age_c	age_c_sq	age_c_cu	pds_c	pds_c_sq	pds_c_cu	logtest_c	logtest_c_sq	logtest_c_cu	InputFile \
 01	2	angry	1.1429406961178	1.30631343484225	1.49303878656664	1.33734939759036	1.7885034112353	2.39185395960384	-1.00918850446495	1.01846143754421	-1.02781957501047	/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/FX_models/sub-L001_ses-wave2_con_0001.nii \
 01	2	fear	1.1429406961178	1.30631343484225	1.49303878656664	1.33734939759036	1.7885034112353	2.39185395960384	-1.00918850446495	1.01846143754421	-1.02781957501047	/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/FX_models/sub-L001_ses-wave2_con_0002.nii \
 01	2	sad	1.1429406961178	1.30631343484225	1.49303878656664	1.33734939759036	1.7885034112353	2.39185395960384	-1.00918850446495	1.01846143754421	-1.02781957501047	/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/FX_models/sub-L001_ses-wave2_con_0003.nii \
