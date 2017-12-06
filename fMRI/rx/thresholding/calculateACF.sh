@@ -20,14 +20,15 @@ module load afni
 rxDir=/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff
 
 # AFNI 3dLME model names
-models=(test_cub)
+models=(age_cubF age_cubM pds_cubF pds_cubM test_cubF test_cubM)
 
 # Estimate acf parameters for AFNI 3dLME models and save this output
 # ------------------------------------------------------------------------------------------
 cd "${rxDir}"
 for model in "${models[@]}"; do
 	cd $model
-	3dFWHMx -acf -mask allAff_"${model}"+tlrc[0] "${model}"_residuals+tlrc > "${model}"_acf.txt
+	mod=$(echo ${model:0:-1})
+	3dFWHMx -acf -mask allAff_"${mod}"+tlrc[0] "${mod}"_residuals+tlrc > "${model}"_acf.txt
 	cd ../
 done
 
