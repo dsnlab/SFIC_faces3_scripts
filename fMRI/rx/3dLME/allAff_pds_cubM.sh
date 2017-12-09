@@ -17,7 +17,7 @@ cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff/pds_c
 
 3dLME -prefix allAff_pds_cub \
 -jobs 8 \
--model  "pds_c+pds_c_sq+pds_c_cu+affect+pds_c:affect+pds_c_sq:affect+pds_c_cu:affect" \
+-model  "pds_c+pds_c_sq+pds_c_cu" \
 -ranEff "~1+pds_c" \
 -SS_type 3 \
 -qVars "pds_c,pds_c_sq,pds_c_cu" \

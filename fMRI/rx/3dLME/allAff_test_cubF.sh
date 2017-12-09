@@ -17,7 +17,7 @@ cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff/test_
 
 3dLME -prefix allAff_test_cub \
 -jobs 8 \
--model  "logtest_c+logtest_c_sq+logtest_c_cu+affect+logtest_c:affect+logtest_c_sq:affect+logtest_c_cu:affect" \
+-model  "logtest_c+logtest_c_sq+logtest_c_cu" \
 -ranEff "~1+logtest_c" \
 -SS_type 3 \
 -qVars "logtest_c,logtest_c_sq,logtest_c_cu" \

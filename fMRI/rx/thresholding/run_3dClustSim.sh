@@ -33,14 +33,18 @@ outputDir=/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/thres
 
 #3dClustSim -mask "${afniDir}"/test_cub/allAff_test_cub+tlrc[0] -acf 0.479829  4.77772  11.9654 > "${outputDir}"/test_cub.txt
 
-3dClustSim -mask "${afniDir}"/age_cubF/allAff_age_cub+tlrc[0] -acf 0.506756  4.8032  12.0368 > "${outputDir}"/age_cubF.txt
+#3dClustSim -mask "${afniDir}"/age_cubF/allAff_age_cub+tlrc[0] -acf 0.486987  4.8344  11.7477 > "${outputDir}"/age_cubF.txt
 
-3dClustSim -mask "${afniDir}"/age_cubM/allAff_age_cub+tlrc[0] -acf 0.505008  4.70351  12.6229 > "${outputDir}"/age_cubM.txt
+#3dClustSim -mask "${afniDir}"/age_cubM/allAff_age_cub+tlrc[0] -acf 0.505009  4.71071  12.5593 > "${outputDir}"/age_cubM.txt
 
-3dClustSim -mask "${afniDir}"/pds_cubF/allAff_pds_cub+tlrc[0] -acf 0.489163  4.81523  11.8407 > "${outputDir}"/pds_cubF.txt
+#3dClustSim -mask "${afniDir}"/pds_cubF/allAff_pds_cub+tlrc[0] -acf 0.487129  4.82025  11.8325 > "${outputDir}"/pds_cubF.txt
 
-3dClustSim -mask "${afniDir}"/pds_cubM/allAff_pds_cub+tlrc[0] -acf 0.484698  4.73242  12.2499 > "${outputDir}"/pds_cubM.txt
+#3dClustSim -mask "${afniDir}"/pds_cubM/allAff_pds_cub+tlrc[0] -acf 0.485049  4.74235  12.1954 > "${outputDir}"/pds_cubM.txt
 
-3dClustSim -mask "${afniDir}"/test_cubF/allAff_test_cub+tlrc[0] -acf 0.499564  4.76661  12.0728 > "${outputDir}"/test_cubF.txt
+#3dClustSim -mask "${afniDir}"/test_cubF/allAff_test_cub+tlrc[0] -acf 0.481788  4.79471  11.7627 > "${outputDir}"/test_cubF.txt
 
-3dClustSim -mask "${afniDir}"/test_cubM/allAff_test_cub+tlrc[0] -acf 0.501671  4.70665  12.4056 > "${outputDir}"/test_cubM.txt
+#3dClustSim -mask "${afniDir}"/test_cubM/allAff_test_cub+tlrc[0] -acf 0.5023  4.71259  12.422 > "${outputDir}"/test_cubM.txt
+
+3dClustSim -mask "${afniDir}"/pds/allAff_pds+tlrc[0] -acf 0.484799  4.80348  12.0587 > "${outputDir}"/pds.txt
+
+3dClustSim -mask "${afniDir}"/test/allAff_test+tlrc[0] -acf 0.480981  4.78581  11.9982 > "${outputDir}"/test.txt
