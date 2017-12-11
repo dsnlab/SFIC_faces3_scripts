@@ -22,13 +22,16 @@ cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff/pds/
 -SS_type 3 \
 -qVars "pds_c" \
 -qVarCenters "0" \
--resid	age_residuals \
--num_glt 5 \
--gltLabel 1 'angry-pds' -gltCode 1 'affect : 1*angry pds_c :' \
--gltLabel 2 'fear-pds' -gltCode 2 'affect : 1*fear pds_c :' \
--gltLabel 3 'sad-pds' -gltCode 3 'affect : 1*sad pds_c :' \
--gltLabel 4 'happy-pds' -gltCode 4 'affect : 1*happy pds_c :' \
--gltLabel 5 'neutral-pds' -gltCode 5 'affect : 1*neutral pds_c :' \
+-resid	pds_residuals \
+-num_glt 8 \
+-gltLabel 1 'pds' -gltCode 1 'pds_c :' \
+-gltLabel 2 'female' -gltCode 2 'gender : 1*2' \
+-gltLabel 3 'male' -gltCode 3 'gender : 1*1' \
+-gltLabel 4 'angry-pds' -gltCode 4 'affect : 1*angry pds_c :' \
+-gltLabel 5 'fear-pds' -gltCode 5 'affect : 1*fear pds_c :' \
+-gltLabel 6 'sad-pds' -gltCode 6 'affect : 1*sad pds_c :' \
+-gltLabel 7 'happy-pds' -gltCode 7 'affect : 1*happy pds_c :' \
+-gltLabel 8 'neutral-pds' -gltCode 8 'affect : 1*neutral pds_c :' \
 -dataTable \
 Subj	gender	affect	age_c	age_c_sq	age_c_cu	pds_c	pds_c_sq	pds_c_cu	logtest_c	logtest_c_sq	logtest_c_cu	InputFile \
 01	2	angry	1.15543964334705	1.33504076941796	1.54255903047006	1.5679012345679	2.45831428135955	3.85439399669954	-1.1130632949435	1.23890989855049	-1.37898513381873	/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/FX_models/sub-L001_ses-wave2_con_0001.nii \
