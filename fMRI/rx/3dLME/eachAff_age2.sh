@@ -23,25 +23,25 @@ cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff/age_
 -qVars "age_c" \
 -qVarCenters "0" \
 -resid	age_residuals \
--num_glt 8 \
--gltLabel 1 'age' -gltCode 1 'poly(age_c,1) :' \
--gltLabel 2 'female' -gltCode 2 'gender : 1*2' \
--gltLabel 3 'male' -gltCode 3 'gender : 1*1' \
--gltLabel 4 'age2' -gltCode 4 'poly(age_c,2) :'
--gltLabel 5 'female-age' -gltCode 5 'gender : 1*2 poly(age_c,1) :'
--gltLabel 6 'male-age' -gltCode 6 'gender : 1*1 poly(age_c,1) :'
--gltLabel 7 'female-age2' -gltCode 7 'gender : 1*2 poly(age_c,2) :'
--gltLabel 8 'male-age2' -gltCode 8 'gender : 1*1 poly(age_c,2) :'
--gltLabel 9 'angry-age' -gltCode 9 'affect : 1*angry poly(age_c,1) :' \
--gltLabel 10 'fear-age' -gltCode 10 'affect : 1*fear poly(age_c,1) :' \
--gltLabel 11 'sad-age' -gltCode 11 'affect : 1*sad poly(age_c,1) :' \
--gltLabel 12 'happy-age' -gltCode 12 'affect : 1*happy poly(age_c,1) :' \
--gltLabel 13 'neutral-age' -gltCode 13 'affect : 1*neutral poly(age_c,1) :' \
--gltLabel 14 'angry-age2' -gltCode 14 'affect : 1*angry poly(age_c,2) :' \
--gltLabel 15 'fear-age2' -gltCode 15 'affect : 1*fear poly(age_c,2) :' \
--gltLabel 16 'sad-age2' -gltCode 16 'affect : 1*sad poly(age_c,2) :' \
--gltLabel 17 'happy-age2' -gltCode 17 'affect : 1*happy poly(age_c,2) :' \
--gltLabel 18 'neutral-age2' -gltCode 18 'affect : 1*neutral poly(age_c,2) :' \
+#-num_glt 1 \
+#-gltLabel 1 'age' -gltCode 1 'age_c :' \
+#-gltLabel 2 'female' -gltCode 2 'gender : 1*2' \
+#-gltLabel 3 'male' -gltCode 3 'gender : 1*1' \
+#-gltLabel 4 'age2' -gltCode 4 'poly(age_c,2) :' \
+#-gltLabel 5 'female-age' -gltCode 5 'gender : 1*2 poly(age_c,1) :' \
+#-gltLabel 6 'male-age' -gltCode 6 'gender : 1*1 poly(age_c,1) :' \
+#-gltLabel 7 'female-age2' -gltCode 7 'gender : 1*2 poly(age_c,2) :' \
+#-gltLabel 8 'male-age2' -gltCode 8 'gender : 1*1 poly(age_c,2) :' \
+#-gltLabel 9 'angry-age' -gltCode 9 'affect : 1*angry poly(age_c,1) :' \
+#-gltLabel 10 'fear-age' -gltCode 10 'affect : 1*fear poly(age_c,1) :' \
+#-gltLabel 11 'sad-age' -gltCode 11 'affect : 1*sad poly(age_c,1) :' \
+#-gltLabel 12 'happy-age' -gltCode 12 'affect : 1*happy poly(age_c,1) :' \
+#-gltLabel 13 'neutral-age' -gltCode 13 'affect : 1*neutral poly(age_c,1) :' \
+#-gltLabel 14 'angry-age2' -gltCode 14 'affect : 1*angry poly(age_c,2) :' \
+#-gltLabel 15 'fear-age2' -gltCode 15 'affect : 1*fear poly(age_c,2) :' \
+#-gltLabel 16 'sad-age2' -gltCode 16 'affect : 1*sad poly(age_c,2) :' \
+#-gltLabel 17 'happy-age2' -gltCode 17 'affect : 1*happy poly(age_c,2) :' \
+#-gltLabel 18 'neutral-age2' -gltCode 18 'affect : 1*neutral poly(age_c,2) :' \
 -dataTable \
 Subj	gender	affect	age_c	age_c_sq	age_c_cu	pds_c	pds_c_sq	pds_c_cu	logtest_c	logtest_c_sq	logtest_c_cu	InputFile \
 01	2	angry	1.15543964334705	1.33504076941796	1.54255903047006	1.5679012345679	2.45831428135955	3.85439399669954	-1.1130632949435	1.23890989855049	-1.37898513381873	/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/FX_models/sub-L001_ses-wave2_con_0001.nii \
