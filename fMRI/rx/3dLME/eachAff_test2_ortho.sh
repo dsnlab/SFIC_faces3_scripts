@@ -1,9 +1,9 @@
 #!/bin/bash
 #--------------------------------------------------------------
 #
-#SBATCH --job-name=eachAff_age3
-#SBATCH --output=output/eachAff_age3.log
-#SBATCH --error=output/eachAff_age3_error.log
+#SBATCH --job-name=eachAff_test2
+#SBATCH --output=output/eachAff_test2.log
+#SBATCH --error=output/eachAff_test2_error.log
 #SBATCH --cpus-per-task=25
 #SBATCH --ntasks=1
 #SBATCH --mem-per-cpu=4000
@@ -13,24 +13,22 @@ module unload intel
 module load gcc/6.4 
 module load afni
 
-cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff/age3/
+cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff/test2/
 
-3dLME -prefix eachAff_age3 \
+3dLME -prefix test \
 -jobs 8 \
--model  "age1+age2+age3+gender+affect+age1:gender+age2:gender+age3:gender+age1:affect+age2:affect+age3:affect+gender:affect+age1:gender:affect+age2:gender:affect+age3:gender:affect" \
--ranEff "~1+age1" \
+-model  "test1+test2+gender+affect+test1:gender+test2:gender+test1:affect+test2:affect+gender:affect+test1:gender:affect+test2:gender:affect" \
+-ranEff "~1+test1" \
 -SS_type 3 \
--qVars "age1,age2,age3" \
--qVarCenters "0,0,0" \
--resid	age_residuals \
--num_glt 7 \
--gltLabel 1 'age1' -gltCode 1 'age1 :' \
--gltLabel 2 'age2' -gltCode 2 'age2 :' \
--gltLabel 3 'age3' -gltCode 3 'age3 :' \
--gltLabel 4 'age1-sex' -gltCode 4 'gender : 1*2 -1*1 age1 :' \
--gltLabel 5 'age2-sex' -gltCode 5 'gender : 1*2 -1*1 age2 :' \
--gltLabel 6 'age3-sex' -gltCode 6 'gender : 1*2 -1*1 age3 :' \
--gltLabel 7 'sex' -gltCode 7 'gender : 1*2 -1*1' \
+-qVars "test1,test2" \
+-qVarCenters "0,0" \
+-resid	test_residuals \
+-num_glt 5 \
+-gltLabel 1 'test1' -gltCode 1 'test1 :' \
+-gltLabel 2 'test2' -gltCode 2 'test2 :' \
+-gltLabel 3 'test1-sex' -gltCode 3 'gender : 1*2 -1*1 test1 :' \
+-gltLabel 4 'test2-sex' -gltCode 4 'gender : 1*2 -1*1 test2 :' \
+-gltLabel 5 'sex' -gltCode 5 'gender : 1*2 -1*1' \
 -dataTable \
 Subj	wave	gender	age	age1	age2	age3	pds1	pds2	pds3	test1	test2	test3	affect	InputFile \
 01	2	2	13.503	0.036	-0.1065	-0.0508	0.0892	0.0148	-0.0634	-0.1171	0.1053	-0.0058	angry	/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/FX_models/sub-L001_ses-wave2_con_0001.nii \

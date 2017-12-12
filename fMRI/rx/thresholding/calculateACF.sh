@@ -17,18 +17,18 @@ module load gcc/6.4
 module load afni
 
 # RX directories (where the residual files are)
-rxDir=/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff
+rxDir=/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff
 
 # AFNI 3dLME model names
-models=(test)
+models=(age2 age3 pds2 pds3 test2 test3)
 
 # Estimate acf parameters for AFNI 3dLME models and save this output
 # ------------------------------------------------------------------------------------------
 cd "${rxDir}"
 for model in "${models[@]}"; do
 	cd $model
-	#mod=$(echo ${model:0:-1})
-	3dFWHMx -acf -mask allAff_"${model}"+tlrc[0] log"${model}"_residuals+tlrc > "${model}"_acf.txt
+	mod=$(echo ${model:0:-1})
+	3dFWHMx -acf -mask "${mod}"+tlrc[0] "${mod}"_residuals+tlrc > "${model}"_acf.txt
 	cd ../
 done
 

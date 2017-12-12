@@ -13,11 +13,11 @@ module unload intel
 module load gcc/6.4 
 module load afni
 
-cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff/age/
+cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff/age_sq/
 
-3dLME -prefix eachAff_age \
+3dLME -prefix eachAff_age2 \
 -jobs 8 \
--model  "poly(age_c,2)" \
+-model  "poly(age_c,2)*gender*affect" \
 -ranEff "~1+age_c" \
 -SS_type 3 \
 -qVars "age_c" \

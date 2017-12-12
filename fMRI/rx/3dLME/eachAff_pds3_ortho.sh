@@ -1,9 +1,9 @@
 #!/bin/bash
 #--------------------------------------------------------------
 #
-#SBATCH --job-name=eachAff_age3
-#SBATCH --output=output/eachAff_age3.log
-#SBATCH --error=output/eachAff_age3_error.log
+#SBATCH --job-name=eachAff_pds3
+#SBATCH --output=output/eachAff_pds3.log
+#SBATCH --error=output/eachAff_pds3_error.log
 #SBATCH --cpus-per-task=25
 #SBATCH --ntasks=1
 #SBATCH --mem-per-cpu=4000
@@ -13,23 +13,23 @@ module unload intel
 module load gcc/6.4 
 module load afni
 
-cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff/age3/
+cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff/pds3/
 
-3dLME -prefix eachAff_age3 \
+3dLME -prefix pds \
 -jobs 8 \
--model  "age1+age2+age3+gender+affect+age1:gender+age2:gender+age3:gender+age1:affect+age2:affect+age3:affect+gender:affect+age1:gender:affect+age2:gender:affect+age3:gender:affect" \
--ranEff "~1+age1" \
+-model  "pds1+pds2+pds3+gender+affect+pds1:gender+pds2:gender+pds3:gender+pds1:affect+pds2:affect+pds3:affect+gender:affect+pds1:gender:affect+pds2:gender:affect+pds3:gender:affect" \
+-ranEff "~1+pds1" \
 -SS_type 3 \
--qVars "age1,age2,age3" \
+-qVars "pds1,pds2,pds3" \
 -qVarCenters "0,0,0" \
--resid	age_residuals \
+-resid pds_residuals \
 -num_glt 7 \
--gltLabel 1 'age1' -gltCode 1 'age1 :' \
--gltLabel 2 'age2' -gltCode 2 'age2 :' \
--gltLabel 3 'age3' -gltCode 3 'age3 :' \
--gltLabel 4 'age1-sex' -gltCode 4 'gender : 1*2 -1*1 age1 :' \
--gltLabel 5 'age2-sex' -gltCode 5 'gender : 1*2 -1*1 age2 :' \
--gltLabel 6 'age3-sex' -gltCode 6 'gender : 1*2 -1*1 age3 :' \
+-gltLabel 1 'pds1' -gltCode 1 'pds1 :' \
+-gltLabel 2 'pds2' -gltCode 2 'pds2 :' \
+-gltLabel 3 'pds3' -gltCode 3 'pds3 :' \
+-gltLabel 4 'pds1-sex' -gltCode 4 'gender : 1*2 -1*1 pds1 :' \
+-gltLabel 5 'pds2-sex' -gltCode 5 'gender : 1*2 -1*1 pds2 :' \
+-gltLabel 6 'pds3-sex' -gltCode 6 'gender : 1*2 -1*1 pds3 :' \
 -gltLabel 7 'sex' -gltCode 7 'gender : 1*2 -1*1' \
 -dataTable \
 Subj	wave	gender	age	age1	age2	age3	pds1	pds2	pds3	test1	test2	test3	affect	InputFile \

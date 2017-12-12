@@ -25,12 +25,12 @@ module load prl afni
 rx_dir='/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff' #RX output directory
 
 # variables
-rx_models=(age pds test)
-t_threshs=(2.807 2.807 2.807)
-c_threshs=(20 20 20)
+rx_models=(age3 pds3 test3)
+t_threshs=(3.291 3.291 3.291)
+c_threshs=(32 32 32)
 
 #sub_bricks=(intercept dev dev2 dev3 gender affect dev_gender dev2_gender dev3_gender dev_affect dev2_affect dev3_affect gender_affect dev_gender_affect dev2_gender_affect dev3_gender_affect)
-sub_bricks=(intercept dev gender affect dev_gender dev_affect affect_gender dev_gender_affect dev devZ female femZ male malZ angry_dev angZ fear_dev fearZ sad_dev sadZ happy_dev hapZ neutral_dev neutZ)
+sub_bricks=(intercept dev1F dev2F dev3F genderF affectF dev1_genderF dev2_genderF dev3_genderF dev1_affectF dev2_affectF dev3_affectF gender_affectF dev1_gender_affectF dev2_affect_genderF dev3_gender_affectF dev1 dev1Z dev2 dev2Z dev3 dev3Z dev1_gender dev1_genderZ dev2_gender dev2_genderZ dev3_gender dev3_genderZ)
 
 
 # Save maps, masks, tables. Convert to niftis
@@ -47,16 +47,16 @@ for index in ${!array1[*]}; do
 	cd ${array1[$index]}
 	echo ${array1[$index]}, ${array3[$index]}, ${array2[$index]}
 	
-	#mod=$(echo ${array1[$index]:0:-1})
-	mod=$(echo ${array1[$index]})
+	mod=$(echo ${array1[$index]:0:-1})
+	#mod=$(echo ${array1[$index]})
 	
-	list=(8 14 16 18 20 22)
+	list=(16 18 20 22 24 26)
 	for num in ${list[@]}; do
 		echo $num
 		num2=$((num + 1))
 #		3dmerge -dxyz=1 -1clust 1 ${array3[$index]} -1thresh ${array2[$index]} -1dindex $num -1tindex $num -prefix ${array4[$num]} allAff_${array1[$index]}+tlrc
 # 		3dclust -savemask ${array4[$num]}_clust -orient LPI -noabs -1thresh ${array2[$index]} -NN3 ${array3[$index]} -1dindex 0 -1tindex 0 eachAff_${mod}+tlrc.[${num2}] > ${array4[$num]}_clust.txt
-#		3dclust -orient LPI -noabs -1thresh ${array2[$index]} -NN3 ${array3[$index]} -1dindex 0 -1tindex 0 eachAff_${mod}+tlrc.[${num2}] > ${array4[$num]}_clust_001.txt
+		3dclust -savemask ${array4[$num]}_clust -orient LPI -noabs -1thresh ${array2[$index]} -NN3 ${array3[$index]} -1dindex 0 -1tindex 0 ${mod}+tlrc.[${num2}] > ${array4[$num]}_clust_001.txt
 
 #		3dAFNItoNIFTI -prefix ${array4[$num]} ${array4[$num]}+tlrc["0"]
 		3dAFNItoNIFTI -prefix ${array4[$num]}_clust ${array4[$num]}_clust+tlrc["0"]

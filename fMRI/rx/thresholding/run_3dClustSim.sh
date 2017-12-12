@@ -19,10 +19,10 @@ module load afni
 # ------------------------------------------------------------------------------------------
 
 # RX directories (where model masks can be found)
-afniDir=/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/allAff
+afniDir=/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff
 
 # Output directory to store thresholding info
-outputDir=/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/thresholding/allAff
+outputDir=/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/thresholding/eachAff
 
 # Run 3dClustSim
 # ------------------------------------------------------------------------------------------
@@ -45,6 +45,14 @@ outputDir=/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/thres
 
 #3dClustSim -mask "${afniDir}"/test_cubM/allAff_test_cub+tlrc[0] -acf 0.5023  4.71259  12.422 > "${outputDir}"/test_cubM.txt
 
-3dClustSim -mask "${afniDir}"/pds/allAff_pds+tlrc[0] -acf 0.484799  4.80348  12.0587 > "${outputDir}"/pds.txt
+#3dClustSim -mask "${afniDir}"/pds/allAff_pds+tlrc[0] -acf 0.484799  4.80348  12.0587 > "${outputDir}"/pds.txt
 
-3dClustSim -mask "${afniDir}"/test/allAff_test+tlrc[0] -acf 0.480981  4.78581  11.9982 > "${outputDir}"/test.txt
+#3dClustSim -mask "${afniDir}"/test/allAff_test+tlrc[0] -acf 0.480981  4.78581  11.9982 > "${outputDir}"/test.txt
+
+3dClustSim -mask "${afniDir}"/age2/age+tlrc[0] -acf 0.489422  4.72976  11.9753 > "${outputDir}"/age2.txt
+3dClustSim -mask "${afniDir}"/age3/age+tlrc[0] -acf 0.47871  4.70225  11.943 > "${outputDir}"/age3.txt
+3dClustSim -mask "${afniDir}"/pds2/pds+tlrc[0] -acf 0.490347  4.73886  12.0188 > "${outputDir}"/pds2.txt
+3dClustSim -mask "${afniDir}"/pds3/pds+tlrc[0] -acf 0.489974  4.73561  12.0386 > "${outputDir}"/pds3.txt
+3dClustSim -mask "${afniDir}"/test2/test+tlrc[0] -acf 0.487559  4.73678  12.0534 > "${outputDir}"/test2.txt
+3dClustSim -mask "${afniDir}"/test3/test+tlrc[0] -acf 0.491198  4.74365  12.0738 > "${outputDir}"/test3.txt
+
