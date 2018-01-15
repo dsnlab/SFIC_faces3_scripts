@@ -50,9 +50,9 @@ outputDir=/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/thres
 #3dClustSim -mask "${afniDir}"/test/allAff_test+tlrc[0] -acf 0.480981  4.78581  11.9982 > "${outputDir}"/test.txt
 
 3dClustSim -mask "${afniDir}"/age2/age+tlrc[0] -acf 0.489422  4.72976  11.9753 > "${outputDir}"/age2.txt
-3dClustSim -mask "${afniDir}"/age3/age+tlrc[0] -acf 0.47871  4.70225  11.943 > "${outputDir}"/age3.txt
+#3dClustSim -mask "${afniDir}"/age3/age+tlrc[0] -acf 0.47871  4.70225  11.943 > "${outputDir}"/age3.txt
 3dClustSim -mask "${afniDir}"/pds2/pds+tlrc[0] -acf 0.490347  4.73886  12.0188 > "${outputDir}"/pds2.txt
-3dClustSim -mask "${afniDir}"/pds3/pds+tlrc[0] -acf 0.489974  4.73561  12.0386 > "${outputDir}"/pds3.txt
-3dClustSim -mask "${afniDir}"/test2/test+tlrc[0] -acf 0.487559  4.73678  12.0534 > "${outputDir}"/test2.txt
-3dClustSim -mask "${afniDir}"/test3/test+tlrc[0] -acf 0.491198  4.74365  12.0738 > "${outputDir}"/test3.txt
+#3dClustSim -mask "${afniDir}"/pds3/pds+tlrc[0] -acf 0.489974  4.73561  12.0386 > "${outputDir}"/pds3.txt
+#3dClustSim -mask "${afniDir}"/test2/test+tlrc[0] -acf 0.487559  4.73678  12.0534 > "${outputDir}"/test2.txt
+#3dClustSim -mask "${afniDir}"/test3/test+tlrc[0] -acf 0.491198  4.74365  12.0738 > "${outputDir}"/test3.txt
 

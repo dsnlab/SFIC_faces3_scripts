@@ -20,7 +20,7 @@ module load afni
 rxDir=/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff
 
 # AFNI 3dLME model names
-models=(age2 age3 pds2 pds3 test2 test3)
+models=(age2 pds2)
 
 # Estimate acf parameters for AFNI 3dLME models and save this output
 # ------------------------------------------------------------------------------------------

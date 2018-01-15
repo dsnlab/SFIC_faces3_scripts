@@ -17,18 +17,15 @@ cd /projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/eachAff/age2
 
 3dLME -prefix eachAff_age2 \
 -jobs 8 \
--model  "age1+age2+gender+affect+age1:gender+age2:gender+age1:affect+age2:affect+gender:affect+age1:gender:affect+age2:gender:affect" \
+-model  "age1+age2+gender+affect" \
 -ranEff "~1+age1" \
 -SS_type 3 \
 -qVars "age1,age2" \
 -qVarCenters "0,0" \
 -resid	age_residuals \
--num_glt 5 \
+-num_glt 2 \
 -gltLabel 1 'age1' -gltCode 1 'age1 :' \
 -gltLabel 2 'age2' -gltCode 2 'age2 :' \
--gltLabel 3 'age1-sex' -gltCode 3 'gender : 1*2 -1*1 age1 :' \
--gltLabel 4 'age2-sex' -gltCode 4 'gender : 1*2 -1*1 age2 :' \
--gltLabel 5 'sex' -gltCode 5 'gender : 1*2 -1*1' \
 -dataTable \
 Subj	wave	gender	age	age1	age2	age3	pds1	pds2	pds3	test1	test2	test3	affect	InputFile \
 01	2	2	13.503	0.036	-0.1065	-0.0508	0.0892	0.0148	-0.0634	-0.1171	0.1053	-0.0058	angry	/projects/dsnlab/shared/SFIC_Faces3/fMRI/analysis/rx/AFNI_masked/FX_models/sub-L001_ses-wave2_con_0001.nii \
