@@ -74,6 +74,106 @@ covariates2[,4:12] <-round(covariates2[,4:12],4)
 write.table(covariates2, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/3dlme_covariates.txt', sep = "\t", quote=FALSE, row.names = FALSE)
 ```
 
+# create orthogonal polynomial covariate file (for both sexes)
+```{r}
+poly_age <- poly(covariates$age, 3)
+colnames(poly_age) = c("age1","age2","age3")
+
+poly_pds <- poly(covariates$pdss, 3)
+colnames(poly_pds) = c("pds1","pds2","pds3")
+
+poly_test <- poly(covariates$l_testMean, 3)
+colnames(poly_test) = c("test1","test2","test3")
+
+covariates <- cbind(covariates,poly_age,poly_pds,poly_test)
+
+covariates = covariates %>%
+  mutate(subid = as.integer(subid),
+         wave = as.factor(wave)) %>%
+  select(subid, wave, gender, age, age1, age2, age3, pds1, pds2, pds3, test1, test2, test3)
+
+covariates2 = left_join(covariates, fxCons, by = c("subid", "wave")) %>%
+  mutate(Subj = subid) %>%
+  select(-file, -subid, -con) %>%
+  mutate(Subj = sprintf("%02d", Subj)) %>%
+  select(Subj, everything()) %>%
+  arrange(Subj)
+
+covariates2[,4:13] <-round(covariates2[,4:13],4)
+
+write.table(covariates2, '/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/3dlme_covariates_ortho.txt', sep = "\t", quote=FALSE, row.names = FALSE)
+```
+
+# create ortho covariate file for females
+```{r}
+# load age
+covariates = read.csv("/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/covariates.csv")
+covariatesF <- covariates %>% filter(gender==2)
+  
+poly_age <- poly(covariatesF$age, 3)
+colnames(poly_age) = c("age1","age2","age3")
+
+poly_pds <- poly(covariatesF$pdss, 3)
+colnames(poly_pds) = c("pds1","pds2","pds3")
+
+poly_test <- poly(covariatesF$l_testMean, 3)
+colnames(poly_test) = c("test1","test2","test3")
+
+covariatesF <- cbind(covariatesF,poly_age,poly_pds,poly_test)
+
+covariatesF = covariatesF %>%
+  mutate(subid = as.integer(subid),
+         wave = as.factor(wave)) %>%
+  select(subid, wave, gender, age, age1, age2, age3, pds1, pds2, pds3, test1, test2, test3)
+
+covariatesF = left_join(covariatesF, fxCons, by = c("subid", "wave")) %>%
+  mutate(Subj = subid) %>%
+  select(-file, -subid, -con) %>%
+  mutate(Subj = sprintf("%02d", Subj)) %>%
+  select(Subj, everything()) %>%
+  arrange(Subj)
+
+covariatesF[,4:13] <-round(covariatesF[,4:13],4)
+
+write.table(covariatesF, '/Volumes/StorEDGE/WORK/DSN/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/3dlme_covariatesF_ortho.txt', sep = "\t", quote=FALSE, row.names = FALSE)
+```
+
+# create ortho covariate file for males
+```{r}
+# load age
+covariates = read.csv("/Volumes/psych-cog/dsnlab/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/covariates.csv")
+covariatesM <- covariates %>% filter(gender==1)
+  
+poly_age <- poly(covariatesM$age, 3)
+colnames(poly_age) = c("age1","age2","age3")
+
+poly_pds <- poly(covariatesM$pdss, 3)
+colnames(poly_pds) = c("pds1","pds2","pds3")
+
+poly_test <- poly(covariatesM$l_testMean, 3)
+colnames(poly_test) = c("test1","test2","test3")
+
+covariatesM <- cbind(covariatesM,poly_age,poly_pds,poly_test)
+
+covariatesM = covariatesM %>%
+  mutate(subid = as.integer(subid),
+         wave = as.factor(wave)) %>%
+  select(subid, wave, gender, age, age1, age2, age3, pds1, pds2, pds3, test1, test2, test3)
+
+covariatesM = left_join(covariatesM, fxCons, by = c("subid", "wave")) %>%
+  mutate(Subj = subid) %>%
+  select(-file, -subid, -con) %>%
+  mutate(Subj = sprintf("%02d", Subj)) %>%
+  select(Subj, everything()) %>%
+  arrange(Subj)
+
+covariatesM[,4:13] <-round(covariatesM[,4:13],4)
+
+write.table(covariatesM, '/Volumes/StorEDGE/WORK/DSN/SFIC/SFIC_faces3_scripts/fMRI/rx/3dLME/3dlme_covariatesM_ortho.txt', sep = "\t", quote=FALSE, row.names = FALSE)
+```
+
+
+# HAVE NOT COMPLETED REST OF SCRIPT #
 # create covariate file for both females
 ```{r}
 covariatesF = covariates %>%
